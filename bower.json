@@ -1,0 +1,11 @@
+{
+  "name": "Trade union rights",
+  "version": "0.0.1",
+  "authors": [
+    "Bjorn Sandvik <bjorn@thematicmapping.org>"
+  ],
+  "description": "Website prototype for freedom of association and collective bargaining rights.",
+  "license": "",
+  "homepage": "https://github.com/turban/trade-union-rights",
+  "private": true
+}
