@@ -19,11 +19,13 @@ $(function() {
       createMap(countries[0]);
     }
     if (data[1] = 'success') {
-      styleMap(parseData(data[0]));
+      var values = parseData(data[0]);
+      styleMap(values);
+      createTable(countries[0], values);
     }
   }
 
-  function initMap(countries) {
+  function initMap() {
     // Sphere Mollweide: http://spatialreference.org/ref/esri/53009/
     var crs = new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
       resolutions: [50000, 25000, 12500, 6250, 3125] 
@@ -104,6 +106,14 @@ $(function() {
     return values;
   }
 
+  function parseFeatures(features) {
+    var countries = {};
+    for (var i = 0; i < features.length; i++) {
+      countries[features[i].id] = features[i].properties;     
+    }
+    return countries;
+  }
+
   function createLegend(colors) {
     var legend = L.control({
       position: 'bottomright'
@@ -148,6 +158,34 @@ $(function() {
         tickDecimals: 0
       }
     });    
+  }
+
+  function createTable (countries, values) {
+    var html = '',
+        year = 2012;
+
+    countries = parseFeatures(countries.features);
+
+    for (code in values) {  
+      var name = 'Country';
+      if (countries[code]) name = countries[code].name;
+      var value = values[code][year].both;
+      html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td></tr>'
+    }
+
+    $('.table tbody').append(html);
+
+    new Tablesort(document.getElementById('table'));
+
+    // Trigger click to sort table
+    $('.table thead tr th:last-child').trigger('click');
+
+    /*
+    $('.table tbody tr').click(function() {
+      if (this.id) showCountry(this.id);
+    });
+    */
+
   }
 
 });
