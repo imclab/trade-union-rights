@@ -53,7 +53,6 @@ function initMap(countries) {
 }
 
 function createMap(countries) {
-
   geojson = L.geoJson(countries, {
     style: function (feature) {
       return {
@@ -64,11 +63,7 @@ function createMap(countries) {
         fillOpacity: 1,
         clickable: true
       };
-    }//,
-    //onEachFeature: function (feature, layer) {
-    //  layer.bindLabel(feature.properties.name + ' ' + feature.id, {direction: 'auto'});
-      //layer.on('click', onMapClick);
-    //}
+    }
   }).addTo(map);
 }
 
@@ -80,12 +75,14 @@ function styleMap(values) {
         layer.setStyle({
           fillColor: colors[Math.floor(value/10)]
         });
-        layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'});  
+        layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
+        layer.on('click', onMapClick); 
       } else {
         layer.setStyle({
           fillColor: '#ddd'}
         ); 
         layer.unbindLabel(); 
+        layer.off('click', onMapClick);
       }
   });
 
@@ -111,7 +108,6 @@ function createLegend(colors) {
     var div = L.DomUtil.create('div', 'leaflet-control-legend');
     var html = '<span>Worse</span>';
     for (var i = 0; i < colors.length; i++) {
-      console.log(colors[i]);
       html += '<i class="leaflet-control-legend-color" style="background:' + colors[i] + '"></i>';
     }
     html += '<span>Better</span>';      
@@ -121,4 +117,11 @@ function createLegend(colors) {
   legend.addTo(map);
 }
 
+function onMapClick(evt) {
+  if (evt.target.feature) showCountry(evt.target.feature);
+}
+
+function showCountry (country) {
+  $('#detail').html('<h3>' + country.properties.name + '</h3><p>Show country data</p>');
+}
 
