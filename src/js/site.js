@@ -9,32 +9,14 @@ $.when(
   $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
 ).then(loaded);
 
-/*
-$.getJSON('data/countries_110m.geojson', function(countries) {
-  createMap(countries);
-});
-
-$.getJSON('http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, value FROM values', function(data) {
-  var values = {};
-  for (var i = 0; i < data.rows.length; i++) { 
-  	var item = data.rows[i];
-  	if (!values[item.country]) values[item.country] = {}; 
-  	values[item.country][item.year] = item.value;
-  }
-  console.log(values);
-});
-*/
-
 function loaded(countries, data) {
   if (countries[1] = 'success') {
     createMap(countries[0]);
   }
-
   if (data[1] = 'success') {
     styleMap(parseData(data[0]));
   }
 }
-
 
 function initMap(countries) {
   // Sphere Mollweide: http://spatialreference.org/ref/esri/53009/
@@ -106,6 +88,8 @@ function styleMap(values) {
         layer.unbindLabel(); 
       }
   });
+
+  createLegend(colors);
 }
 
 function parseData(data) {
@@ -117,6 +101,24 @@ function parseData(data) {
   	values[item.country][item.year][item.type] = item.value;
   }
   return values;
+}
+
+function createLegend(colors) {
+  var legend = L.control({
+    position: 'bottomright'
+  });  
+  legend.onAdd = function(map){
+    var div = L.DomUtil.create('div', 'leaflet-control-legend');
+    var html = '<span>Worse</span>';
+    for (var i = 0; i < colors.length; i++) {
+      console.log(colors[i]);
+      html += '<i class="leaflet-control-legend-color" style="background:' + colors[i] + '"></i>';
+    }
+    html += '<span>Better</span>';      
+    div.innerHTML = html;      
+    return div;
+  };
+  legend.addTo(map);
 }
 
 
