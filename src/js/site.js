@@ -127,7 +127,7 @@ $(function() {
 
   function showCountry (country) {
     //console.log("Show", values[country.id]);
-    $('#detail').html('<h3>' + country.properties.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div>');
+    $('#detail').html('<h3>' + country.properties.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" class="btn btn-default">Country profile</button>');
     createGraph(values[country.id]);
   }
 
