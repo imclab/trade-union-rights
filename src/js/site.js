@@ -1,4 +1,7 @@
-var map, geojson, year = 2012;
+var map, 
+    values = {}, 
+    geojson, 
+    year = 2012;
 
 var colors = ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)'];
 
@@ -90,7 +93,6 @@ function styleMap(values) {
 }
 
 function parseData(data) {
-  var values = {};
   for (var i = 0; i < data.rows.length; i++) { 
   	var item = data.rows[i];
   	if (!values[item.country]) values[item.country] = {}; 
@@ -122,6 +124,7 @@ function onMapClick(evt) {
 }
 
 function showCountry (country) {
+  console.log("Show", values[country.id]);
   $('#detail').html('<h3>' + country.properties.name + '</h3><p>Show country data</p>');
 }
 
