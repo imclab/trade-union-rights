@@ -194,7 +194,7 @@ $(function() {
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
       var value = values[code][year].both;
-      html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td></tr>'
+      html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td><td></td></tr>'
     }
 
     $('#ranking tbody').append(html);
@@ -259,19 +259,19 @@ $(function() {
 
     for (id in index.items) {
       var indicator = index.items[id];
-      html += '<tr id="1" class="warning"><td>' + indicator.name + '</td><td class="text-right">1</td></tr>';
-      html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right">1</td></tr>';
+      html += '<tr id="1" class="warning"><td>' + indicator.name + '</td><td class="text-right"></td></tr>';
+      html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right"></td></tr>';
 
       for (id in indicator.dejure) {
         var criterion = indicator.dejure[id];
-        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '✓' : '') + '</td></tr>';
       }
 
-      html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right">1</td></tr>';      
+      html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right"></td></tr>';      
 
       for (id in indicator.defacto) {
         var criterion = indicator.defacto[id];
-        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '✓' : '') + '</td></tr>';
       }
     }
 
