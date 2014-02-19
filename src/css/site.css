@@ -11,6 +11,10 @@ body {
   height: 360px;
 }
 
+#ranking-pane {
+  display: none;
+}
+
 .leaflet-container {
   background: transparent;
 }

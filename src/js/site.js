@@ -188,4 +188,12 @@ $(function() {
 
   }
 
+  $('.navbar-nav .toggle').click(function (evt) {
+    evt.preventDefault(); 
+    $('.navbar-nav li').removeClass('active');
+    $(this).addClass('active');
+    $('.toggle-pane').hide();
+    $('#'+ $(this).data('nav') +'-pane').show();
+  });
+
 });

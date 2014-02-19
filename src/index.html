@@ -30,8 +30,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Map</a></li>
-            <li><a href="#">Ranking</a></li>
+            <li class="toggle active" data-nav="map"><a href="#">Map</a></li>
+            <li class="toggle" data-nav="ranking"><a href="#">Ranking</a></li>
             <li><a href="#">Countries</a></li>            
             <li><a href="#">Download</a></li>
             <li><a href="#">About</a></li>
@@ -47,7 +47,23 @@
 
       <div class="row">
         <div class="col-md-8">
-          <div id="map"></div>
+
+          <div id="map-pane" class="toggle-pane">
+            <div id="map"></div>
+          </div>
+
+          <div id="ranking-pane" class="toggle-pane">
+            <table id="table" class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th class="text-right">Value</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
         </div>
         <div class="col-md-4">
           <div id="detail" data-spy="affix" data-offset-top="100" data-offset-bottom="60">
@@ -55,25 +71,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p
           </div>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-8">
-          <br/><br/>
-
-          <!-- http://getbootstrap.com/css/#tables -->
-          <table id="table" class="table table-hover">
-            <thead>
-              <tr>
-                <th>Country</th>
-                <th class="text-right">Value</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-
         </div>
       </div>
 
