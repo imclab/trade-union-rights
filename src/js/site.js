@@ -3,6 +3,7 @@ $(function() {
   var map, 
       values = {}, 
       geojson, 
+      countries,
       year = 2012;
 
   var colors = ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)'];
@@ -14,14 +15,15 @@ $(function() {
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
   ).then(loaded);
 
-  function loaded(countries, data) {
-    if (countries[1] = 'success') {
-      createMap(countries[0]);
+  function loaded(geojson, data) {
+    if (geojson[1] = 'success') {
+      createMap(geojson[0]);
+      countries = parseFeatures(geojson[0].features);
     }
     if (data[1] = 'success') {
       var values = parseData(data[0]);
       styleMap(values);
-      createTable(countries[0], values);
+      createTable(countries, values);
     }
   }
 
@@ -132,13 +134,13 @@ $(function() {
   }
 
   function onMapClick(evt) {
-    if (evt.target.feature) showCountry(evt.target.feature);
+    if (evt.target.feature) showCountry(evt.target.feature.id);
   }
 
-  function showCountry (country) {
-    //console.log("Show", values[country.id]);
-    $('#detail').html('<h3>' + country.properties.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" class="btn btn-default">Country profile</button>');
-    createGraph(values[country.id]);
+  function showCountry (code) {
+    var country = countries[code];
+    $('#detail').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" class="btn btn-default">Country profile</button>');
+    createGraph(values[code]);
   }
 
   function createGraph (values) {
@@ -164,8 +166,6 @@ $(function() {
     var html = '',
         year = 2012;
 
-    countries = parseFeatures(countries.features);
-
     for (code in values) {  
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
@@ -180,20 +180,22 @@ $(function() {
     // Trigger click to sort table
     $('.table thead tr th:last-child').trigger('click');
 
-    /*
     $('.table tbody tr').click(function() {
       if (this.id) showCountry(this.id);
     });
-    */
 
   }
 
   $('.navbar-nav .toggle').click(function (evt) {
     evt.preventDefault(); 
-    $('.navbar-nav li').removeClass('active');
-    $(this).addClass('active');
-    $('.toggle-pane').hide();
-    $('#'+ $(this).data('nav') +'-pane').show();
+    menuChange(this.id);
   });
+
+  function menuChange (id) {
+    $('.navbar-nav li').removeClass('active');
+    $('#'+ id).addClass('active');
+    $('.toggle-pane').hide();
+    $('#'+ id +'-pane').show();    
+  }
 
 });

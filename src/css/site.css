@@ -11,14 +11,13 @@ body {
   height: 360px;
 }
 
-#ranking-pane {
+#ranking-nav-pane {
   display: none;
 }
 
 .leaflet-container {
   background: transparent;
 }
-
 
 .leaflet-control-legend {
   background: rgb(255, 255, 255);
