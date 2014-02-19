@@ -1,9 +1,11 @@
 $(function() {
 
   var map, 
+      index,  
       values = {}, 
       geojson, 
       countries,
+      criteria,
       year = 2012;
 
   var colors = ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)'];
@@ -11,15 +13,32 @@ $(function() {
   initMap();
 
   $.when(
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_index ORDER BY id"),      
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
   ).then(loaded);
 
-  function loaded(geojson, data) {
+  function loaded(indicators, geojson, data) {
+    if (indicators[1] = 'success') {
+      indicators = indicators[0].rows;
+      index = {
+        name: indicators[0].name,
+        items: {}
+      };
+      for (var i = 1; i < indicators.length; i++) { 
+        index.items[indicators[i].id] = {
+          name: indicators[i].name,
+          dejure: {},
+          defacto: {}
+        };
+      }
+    }
+
     if (geojson[1] = 'success') {
       createMap(geojson[0]);
       countries = parseFeatures(geojson[0].features);
     }
+
     if (data[1] = 'success') {
       var values = parseData(data[0]);
       styleMap(values);
@@ -140,10 +159,7 @@ $(function() {
   function showCountry (code) {
     var country = countries[code];
     $('#indicator').hide();
-    $('#country').show();
-    console.log($('#country'));
     $('#country').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button>').show();
-
     createGraph(values[code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
@@ -180,14 +196,14 @@ $(function() {
       html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td></tr>'
     }
 
-    $('.table tbody').append(html);
+    $('#ranking tbody').append(html);
 
-    new Tablesort(document.getElementById('table'));
+    new Tablesort(document.getElementById('ranking'));
 
     // Trigger click to sort table
-    $('.table thead tr th:last-child').trigger('click');
+    $('#ranking thead tr th:last-child').trigger('click');
 
-    $('.table tbody tr').click(function() {
+    $('#ranking tbody tr').click(function() {
       if (this.id) showCountry(this.id);
     });
 
@@ -220,8 +236,54 @@ $(function() {
 
     var country = countries[code];
     $('#profile').html('<h3>' + country.name + '</h3>');
+
+    if (criteria) {
+      createCriteriaTable(index);
+    } else {
+      $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, indicator_id, type, name FROM turi_criteria ORDER BY indicator_id, id", function(data) {
+        for (var i = 0; i < data.rows.length; i++) {   
+          var criterion = data.rows[i];
+          index.items[criterion.indicator_id][criterion.type][criterion.id] = {
+            name: criterion.name
+          };
+        }   
+        createCriteriaTable(index);
+        criteria = true;        
+      });  
+    } 
   }
 
+  function createCriteriaTable (index) {
+    //console.log("createCriteriaTable", index);
 
+    var html = '<tr id="1"><td>Trade union rights</td><td class="text-right">1</td></tr>';
+    html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right">1</td></tr>';
+    html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right">1</td></tr>';
+
+    //html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td></tr>'
+
+    for (id in index.items) {
+      var indicator = index.items[id];
+      //data.push([year, values[year].both]);
+      console.log(id, indicator);
+      html += '<tr id="1"><td>' + indicator.name + '</td><td class="text-right">1</td></tr>';
+      html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right">1</td></tr>';
+
+      for (id in indicator.dejure) {
+        var criterion = indicator.dejure[id];
+        html += '<tr id="1"><td style="padding-left:40px">' +  criterion.name + '</td><td class="text-right">1</td></tr>';
+      }
+
+      html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right">1</td></tr>';      
+
+      for (id in indicator.defacto) {
+        var criterion = indicator.defacto[id];
+        html += '<tr id="1"><td style="padding-left:40px">' +  criterion.name + '</td><td class="text-right">1</td></tr>';
+      }
+
+    }
+
+    $('#criteria tbody').append(html);
+  }
 
 });

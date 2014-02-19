@@ -49,7 +49,6 @@ body {
   height: 100%;
 }
 
-
 .leaflet-label {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.95);
@@ -73,8 +72,6 @@ body {
   white-space: nowrap;
   z-index: 6;
 }
-
-
 
 .demo-placeholder {
   width: 100%;
