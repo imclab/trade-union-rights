@@ -160,7 +160,7 @@ $(function() {
   function showCountry (code) {
     var country = countries[code];
     $('#indicator').hide();
-    $('#country').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button>').show();
+    $('#country').html('<h4>' + country.name + '</h4><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button><br/><br/>').show();
     createGraph(values[code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
@@ -194,7 +194,7 @@ $(function() {
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
       var value = values[code][year].both;
-      html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td><td></td></tr>'
+      html += '<tr id="' + code + '"><td>' + name + '</td><td></td><td></td><td class="text-right">' + value + '</td></tr>'
     }
 
     $('#ranking tbody').append(html);

@@ -49,7 +49,48 @@
         <div class="col-md-8">
 
           <div id="map-nav-pane" class="toggle-pane">
+
             <div id="map"></div>
+
+            <div class="btn-group btn-group-xs">
+              <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  Trade union rights
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Trade union rights</a></li>
+                  <li><a href="#">Fundamental civil liberties</a></li>
+                  <li><a href="#">Freedom of association rights</a></li>
+                  <li><a href="#">Collective bargaining rights</a></li>  
+                  <li><a href="#">Right to strike</a></li>
+                </ul>
+              </div>
+             <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  Total
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Total</a></li>
+                  <li><a href="#">De jure</a></li>
+                  <li><a href="#">De facto</a></li>
+                </ul>
+              </div>
+             <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  2012
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">2012</a></li>
+                  <li><a href="#">2009</a></li>
+                  <li><a href="#">2005</a></li>
+                  <li><a href="#">2000</a></li>                  
+                </ul>
+              </div>                            
+            </div>
+
           </div>
 
           <div id="ranking-nav-pane" class="toggle-pane">
@@ -57,8 +98,9 @@
               <thead>
                 <tr>
                   <th>Country</th>
-                  <th class="text-right">Score</th>
-                  <th class="text-right">Trend</th>
+                  <th class="text-right">De jure</th>
+                  <th class="text-right">De facto</th>
+                  <th class="text-right">Total</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -82,7 +124,7 @@
           </div>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 box">
           <div data-spy="affix" data-offset-top="100" data-offset-bottom="60">
             <div id="indicator">
               <h4>The Trade Union Rights Index</h4>
