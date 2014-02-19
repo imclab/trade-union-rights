@@ -142,7 +142,7 @@ $(function() {
     $('#detail').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button>');
     createGraph(values[code]);
     $('#profile-button').click(function (evt) {
-      showCountryProfile(code);
+      showProfile(code);
     });
   }
 
@@ -201,15 +201,23 @@ $(function() {
     $('#'+ id +'-pane').show();    
   }
 
-  function showCountryProfile(code) {
-    console.log("showCountryProfile", code);
+  function showMap () {
+
+  }
+
+  function showRanking () {
+
+  }
+
+  function showProfile(code) {
+    console.log("showProfile", code);
     menuChange('country-nav');
-    $('#detail').hide();
+    $('#detail').html('');
 
     var country = countries[code];
     $('#profile').html('<h3>' + country.name + '</h3>');
-
-
   }
+
+
 
 });
