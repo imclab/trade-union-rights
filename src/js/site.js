@@ -271,14 +271,14 @@ $(function() {
 
       for (id in indicator.dejure) {
         var criterion = indicator.dejure[id];
-        html += '<tr id="1"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
       }
 
       html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right">1</td></tr>';      
 
       for (id in indicator.defacto) {
         var criterion = indicator.defacto[id];
-        html += '<tr id="1"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right">1</td></tr>';
       }
 
     }
