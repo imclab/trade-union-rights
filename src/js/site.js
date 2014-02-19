@@ -139,7 +139,11 @@ $(function() {
 
   function showCountry (code) {
     var country = countries[code];
-    $('#detail').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button>');
+    $('#indicator').hide();
+    $('#country').show();
+    console.log($('#country'));
+    $('#country').html('<h3>' + country.name + '</h3><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button>').show();
+
     createGraph(values[code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
@@ -210,9 +214,9 @@ $(function() {
   }
 
   function showProfile(code) {
-    console.log("showProfile", code);
     menuChange('country-nav');
-    $('#detail').html('');
+    $('#country').hide();
+    $('#indicator').show();
 
     var country = countries[code];
     $('#profile').html('<h3>' + country.name + '</h3>');
