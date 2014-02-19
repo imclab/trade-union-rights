@@ -13,7 +13,7 @@ $(function() {
   initMap();
 
   $.when(
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_index ORDER BY id"),      
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_index"),      
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
   ).then(loaded);
@@ -23,15 +23,16 @@ $(function() {
       indicators = indicators[0].rows;
       index = {
         name: indicators[0].name,
-        items: {}
+        items: []
       };
-      for (var i = 1; i < indicators.length; i++) { 
+      for (var i = 0; i < indicators.length; i++) { 
         index.items[indicators[i].id] = {
           name: indicators[i].name,
           dejure: {},
           defacto: {}
         };
       }
+      console.log(indicators, index);
     }
 
     if (geojson[1] = 'success') {
@@ -256,9 +257,13 @@ $(function() {
   function createCriteriaTable (index) {
     //console.log("createCriteriaTable", index);
 
+    html = '';
+
+    /*
     var html = '<tr id="1"><td>Trade union rights</td><td class="text-right">1</td></tr>';
     html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right">1</td></tr>';
     html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right">1</td></tr>';
+    */
 
     //html += '<tr id="' + code + '"><td>' + name + '</td><td class="text-right">' + value + '</td></tr>'
 
