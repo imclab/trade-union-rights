@@ -11,7 +11,8 @@ body {
   height: 360px;
 }
 
-#ranking-nav-pane {
+#ranking-nav-pane,
+#country-nav-pane {
   display: none;
 }
 
