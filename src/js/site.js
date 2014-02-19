@@ -32,7 +32,7 @@ $(function() {
           defacto: {}
         };
       }
-      console.log(indicators, index);
+      //console.log(indicators, index);
     }
 
     if (geojson[1] = 'success') {
@@ -270,7 +270,7 @@ $(function() {
     for (id in index.items) {
       var indicator = index.items[id];
       //data.push([year, values[year].both]);
-      console.log(id, indicator);
+      //console.log(id, indicator);
       html += '<tr id="1"><td>' + indicator.name + '</td><td class="text-right">1</td></tr>';
       html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right">1</td></tr>';
 
