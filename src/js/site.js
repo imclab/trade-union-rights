@@ -79,6 +79,8 @@ $(function() {
         clickable: false
       }        
     }).addTo(map);
+
+    createLayerSwitcher();
   }
 
   function createMap(countries) {
@@ -277,5 +279,24 @@ $(function() {
 
     $('#criteria tbody').append(html);
   }
+
+  function createLayerSwitcher () {
+    //var layerControl = L.control({
+    //  position: 'bottomleft'
+    //});  
+    //layerControl.onAdd = function(map){
+      var div = L.DomUtil.create('div', 'leaflet-control-indicators');
+      var html = '<div class="btn-group btn-group-xs">';
+      html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
+      html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">De jure</a></li><li><a href="#">De facto</a></li></ul></div>';
+      html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">2012<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">2012</a></li><li><a href="#">2009</a></li><li><a href="#">2005</a></li><li><a href="#">2000</a></li></ul></div>';
+      html += '</div>';    
+      div.innerHTML = html;      
+      //return div;
+    //};
+    //layerControl.addTo(map);
+  }
+
+
 
 });

@@ -18,7 +18,6 @@ body {
   width: 100%; 
   height: 360px;
   border: 1px solid #ddd;
-  margin-bottom: 15px;
 }
 
 #country {
@@ -93,4 +92,9 @@ body {
 
 .criterion {
   font-size: 11px;
+}
+
+#indicator-control {
+  margin-top: -34px;
+  margin-left: 10px;
 }
