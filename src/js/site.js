@@ -287,7 +287,7 @@ $(function() {
     html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">De jure</a></li><li><a href="#">De facto</a></li></ul></div>';
       
     // Years
-    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle dropdown-years" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<div class="btn-group btn-group-xs dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
     for (var i = 0; i < years.length; i++) {   
       html += '<li><a href="#">' + years[i] + '</a></li>';
     };
@@ -296,7 +296,7 @@ $(function() {
     html += '</div>';    
     $('#indicator-control').append(html);
 
-    $('#indicator-control li a').click(function (evt) {
+    $('#indicator-control .dropdown-years li a').click(function (evt) {
       var year = $(this).text();
       $('#indicator-control .dropdown-years i').text(year);
       styleMap(values, year);
