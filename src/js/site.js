@@ -15,7 +15,7 @@ $(function() {
   $.when(
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicator"),      
     $.getJSON('data/countries_110m.geojson'),
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='1'")  
   ).then(loaded);
 
   function loaded(indicators, geojson, data) {
@@ -32,7 +32,6 @@ $(function() {
           defacto: {}
         };
       }
-      //console.log(indicators, index);
     }
 
     if (geojson[1] = 'success') {
@@ -103,7 +102,7 @@ $(function() {
     geojson.eachLayer(function (layer) {
         var feature = layer.feature;
         if (values[feature.id] && values[feature.id][year]) {
-          var value = values[feature.id][year].both;  
+          var value = values[feature.id][year].total;  
           layer.setStyle({
             fillColor: colors[Math.floor(value/10)]
           });
@@ -269,10 +268,10 @@ $(function() {
     if (criteria) {
       createCriteriaTable(index);
     } else {
-      $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, indicator_id, type, name FROM turi_criteria ORDER BY indicator_id, id", function(data) {
+      $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, indicator, type, name FROM turi_criteria ORDER BY indicator, id", function(data) {
         for (var i = 0; i < data.rows.length; i++) {   
           var criterion = data.rows[i];
-          index.items[criterion.indicator_id][criterion.type][criterion.id] = {
+          index.items[criterion.indicator][criterion.type][criterion.id] = {
             name: criterion.name
           };
         }   
