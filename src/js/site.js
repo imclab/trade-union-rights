@@ -161,7 +161,13 @@ $(function() {
   function showCountry (code) {
     var country = countries[code];
     $('#indicator').hide();
-    $('#country').html('<h4>' + country.name + '</h4><p>Show country data</p><div id="placeholder" class="demo-placeholder"></div><br/><button type="button" id="profile-button" class="btn btn-default">Country profile</button><br/><br/>').show();
+
+    var html = '<h4>' + country.name + '</h4><p>Show country data</p>';
+    html += '<div id="placeholder" class="demo-placeholder"></div><br/>';
+    html += '<table id="ranking" class="table table-hover"><thead><tr><th>Indicator</th><th class="text-right">In law</th><th class="text-right">In practice</th><th class="text-right">Total</th></tr></thead><tbody></tbody></table>';
+    html += '<button type="button" id="profile-button" class="btn btn-default">Country profile</button><br/><br/>';
+
+    $('#country').html(html).show();
     createGraph(values[code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
@@ -261,14 +267,14 @@ $(function() {
     for (id in index.items) {
       var indicator = index.items[id];
       html += '<tr id="1" class="warning"><td>' + indicator.name + '</td><td class="text-right"></td></tr>';
-      html += '<tr id="1dj"><td style="padding-left:20px">De jure</td><td class="text-right"></td></tr>';
+      html += '<tr id="1dj"><td style="padding-left:20px">In law</td><td class="text-right"></td></tr>';
 
       for (id in indicator.dejure) {
         var criterion = indicator.dejure[id];
         html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '<span class="glyphicon glyphicon glyphicon-ok-sign"></span>' : '') + '</td></tr>';
       }
 
-      html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right"></td></tr>';      
+      html += '<tr id="1df"><td style="padding-left:20px">In practice</td><td class="text-right"></td></tr>';      
 
       for (id in indicator.defacto) {
         var criterion = indicator.defacto[id];
@@ -284,7 +290,7 @@ $(function() {
 
     var html = '<div class="btn-group btn-group-xs">';
     html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
-    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">De jure</a></li><li><a href="#">De facto</a></li></ul></div>';
+    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">In law</a></li><li><a href="#">In practice</a></li></ul></div>';
       
     // Years
     html += '<div class="btn-group btn-group-xs dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
