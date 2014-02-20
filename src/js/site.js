@@ -162,10 +162,23 @@ $(function() {
     var country = countries[code];
     $('#indicator').hide();
 
-    var html = '<h4>' + country.name + '</h4><p>Show country data</p>';
+    var html = '<button style="float: right" type="button" id="profile-button" class="btn btn-warning">Country profile</button>';
+
+
+    html += '<h4>' + country.name + '</h4><p>Trade union rights - total</p>';
     html += '<div id="placeholder" class="demo-placeholder"></div><br/>';
-    html += '<table id="ranking" class="table table-hover"><thead><tr><th>Indicator</th><th class="text-right">In law</th><th class="text-right">In practice</th><th class="text-right">Total</th></tr></thead><tbody></tbody></table>';
-    html += '<button type="button" id="profile-button" class="btn btn-default">Country profile</button><br/><br/>';
+
+    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">Score</th><th class="text-right">Tend</th></tr></thead><tbody>';
+
+    for (id in index.items) {
+      var indicator = index.items[id];
+      console.log(indicator);
+      html += '<tr><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
+    }
+
+    html +='</tbody></table>';
+
+
 
     $('#country').html(html).show();
     createGraph(values[code]);
