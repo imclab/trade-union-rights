@@ -13,7 +13,7 @@ $(function() {
   initMap();
 
   $.when(
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_index"),      
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicator"),      
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='test'")  
   ).then(loaded);
@@ -158,7 +158,7 @@ $(function() {
     if (evt.target.feature) showCountry(evt.target.feature.id);
   }
 
-  function showCountry (code) {
+  function showCountry (code, indicator, type, year) {
     var country = countries[code];
     $('#indicator').hide();
 
