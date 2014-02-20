@@ -1,48 +1,57 @@
 $(function() {
 
-  var map, 
-      index,  
-      values = {}, 
-      geojson, 
-      countries,
-      criteria,
-      year = 2012;
-
-  var colors = ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)'];
+  var data = {
+    years: [2012, 2009, 2005, 2000],
+    year: 2012,
+    indicators: {},
+    indicator: '1',
+    type: 'total',
+    countries: {},
+    country: null,
+    values: {},
+    criteria: null,
+    criterion: null,
+    colors: ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)']
+  };
+  
+  var map, geojson;
 
   initMap();
 
   $.when(
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicator"),      
     $.getJSON('data/countries_110m.geojson'),
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='1'")  
-  ).then(loaded);
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='" + data.indicator + "'")  
+  ).then(parseData);
 
-  function loaded(indicators, geojson, data) {
+  function parseData(indicators, geojson, values) {
     if (indicators[1] = 'success') {
       indicators = indicators[0].rows;
-      index = {
-        name: indicators[0].name,
-        items: []
-      };
       for (var i = 0; i < indicators.length; i++) { 
-        index.items[indicators[i].id] = {
-          name: indicators[i].name,
-          dejure: {},
-          defacto: {}
-        };
+        var indicator = indicators[i];
+        data.indicators[indicator.id] = indicator;
       }
     }
 
     if (geojson[1] = 'success') {
-      createMap(geojson[0]);
-      countries = parseFeatures(geojson[0].features);
+      var features = geojson[0].features;
+      for (var i = 0; i < features.length; i++) {
+        var feature = features[i]; 
+        data.countries[feature.id] = feature.properties;     
+      }
+      drawCountries(geojson[0]);
     }
 
-    if (data[1] = 'success') {
-      var values = parseData(data[0]);
-      styleMap(values, year);
-      createTable(countries, values);
+    if (values[1] = 'success') {
+      values = values[0].rows;
+      for (var i = 0; i < values.length; i++) { 
+        var value = values[i];
+        if (!data.values[value.country]) data.values[value.country] = {}; 
+        if (!data.values[value.country][value.year]) data.values[value.country][value.year] = {}; 
+        data.values[value.country][value.year][value.type] = value.value;
+      }
+      styleMap(data.values, data.year);
+      createTable(data.countries, data.values);
     }
   }
 
@@ -82,7 +91,7 @@ $(function() {
     createLayerSwitcher();
   }
 
-  function createMap(countries) {
+  function drawCountries(countries) {
     geojson = L.geoJson(countries, {
       style: function (feature) {
         return {
@@ -95,45 +104,23 @@ $(function() {
         };
       }
     }).addTo(map);
-    createLegend(colors);
+    createLegend(data.colors);
   }
 
   function styleMap(values, year) {
     geojson.eachLayer(function (layer) {
-        var feature = layer.feature;
-        if (values[feature.id] && values[feature.id][year]) {
-          var value = values[feature.id][year].total;  
-          layer.setStyle({
-            fillColor: colors[Math.floor(value/10)]
-          });
-          layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
-          layer.on('click', onMapClick); 
-        } else {
-          layer.setStyle({
-            fillColor: '#ddd'}
-          ); 
-          layer.unbindLabel(); 
-          layer.off('click', onMapClick);
-        }
+      var feature = layer.feature;
+      if (values[feature.id] && values[feature.id][year]) {
+        var value = values[feature.id][year].total;  
+        layer.setStyle({ fillColor: data.colors[Math.floor(value/10)] });
+        layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
+        layer.on('click', onMapClick); 
+      } else {
+        layer.setStyle({ fillColor: '#ddd'} ); 
+        layer.unbindLabel(); 
+        layer.off('click', onMapClick);
+      }
     });
-  }
-
-  function parseData(data) {
-    for (var i = 0; i < data.rows.length; i++) { 
-    	var item = data.rows[i];
-    	if (!values[item.country]) values[item.country] = {}; 
-      if (!values[item.country][item.year]) values[item.country][item.year] = {}; 
-    	values[item.country][item.year][item.type] = item.value;
-    }
-    return values;
-  }
-
-  function parseFeatures(features) {
-    var countries = {};
-    for (var i = 0; i < features.length; i++) {
-      countries[features[i].id] = features[i].properties;     
-    }
-    return countries;
   }
 
   function createLegend(colors) {
@@ -154,11 +141,13 @@ $(function() {
   }
 
   function onMapClick(evt) {
-    if (evt.target.feature) showCountry(evt.target.feature.id);
+    if (evt.target.feature) {
+      showCountry(evt.target.feature.id);
+    }
   }
 
   function showCountry (code, indicator, type, year) {
-    var country = countries[code];
+    var country = data.countries[code];
     $('#indicator').hide();
 
     var html = '<button style="float: right" type="button" id="profile-button" class="btn btn-warning">Country profile</button>';
@@ -169,8 +158,8 @@ $(function() {
 
     html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">2012</th><th class="text-right">Trend</th></tr></thead><tbody>';
 
-    for (id in index.items) {
-      var indicator = index.items[id];
+    for (id in data.indicators) {
+      var indicator = data.indicators[id];
       //console.log(indicator);
       var style = 'default';
       if (id == 1) style = 'warning';
@@ -188,7 +177,7 @@ $(function() {
 
 
     $('#country').html(html).show();
-    createGraph(values[code]);
+    createGraph(data.values[code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
     });
@@ -220,7 +209,7 @@ $(function() {
     for (code in values) {  
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
-      var value = values[code][year].both;
+      var value = data.values[code][year].total;
       html += '<tr id="' + code + '"><td>' + name + '</td><td></td><td></td><td class="text-right">' + value + '</td></tr>'
     }
 
@@ -262,30 +251,33 @@ $(function() {
     $('#country').hide();
     $('#indicator').show();
 
-    var country = countries[code];
+    var country = data.countries[code];
     $('#profile').html('<h3>' + country.name + '</h3>');
 
-    if (criteria) {
-      createCriteriaTable(index);
+    if (data.criteria) {
+      createCriteriaTable(data.indicators);
     } else {
-      $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, indicator, type, name FROM turi_criteria ORDER BY indicator, id", function(data) {
-        for (var i = 0; i < data.rows.length; i++) {   
-          var criterion = data.rows[i];
-          index.items[criterion.indicator][criterion.type][criterion.id] = {
-            name: criterion.name
-          };
+      $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, indicator, type, name FROM turi_criteria ORDER BY indicator, id", function(criteria) {
+        data.criteria = {};
+
+        for (var i = 0; i < criteria.rows.length; i++) {   
+          var criterion = criteria.rows[i],
+              indicator = data.indicators[criterion.indicator];
+
+          data.criteria[criterion.id] = criterion;
+          if (!indicator[criterion.type]) indicator[criterion.type] = {};
+          indicator[criterion.type][criterion.id] = criterion; 
         }   
-        createCriteriaTable(index);
-        criteria = true;        
+        createCriteriaTable(data.indicators);     
       });  
     } 
   }
 
-  function createCriteriaTable (index) {
+  function createCriteriaTable (indicators) {
     html = '';
 
-    for (id in index.items) {
-      var indicator = index.items[id];
+    for (id in indicators) {
+      var indicator = indicators[id];
       html += '<tr id="1" class="warning"><td>' + indicator.name + '</td><td class="text-right"></td></tr>';
       html += '<tr id="1dj"><td style="padding-left:20px">In law</td><td class="text-right"></td></tr>';
 
@@ -302,7 +294,7 @@ $(function() {
       }
     }
 
-    $('#criteria tbody').append(html);
+    $('#criteria-table tbody').append(html);
   }
 
   function createLayerSwitcher () {
