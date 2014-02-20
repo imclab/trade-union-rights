@@ -172,8 +172,9 @@ $(function() {
 
     for (id in index.items) {
       var indicator = index.items[id];
-      console.log(indicator);
-      html += '<tr><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
+      //console.log(indicator);
+
+      html += '<tr class="' + ((id == 1) ? 'warning' : '') + '"><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
     }
 
     html +='</tbody></table>';
