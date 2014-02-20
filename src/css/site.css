@@ -104,6 +104,10 @@ body {
   right: 10px;
 }
 
+#indicator-control i {
+  font-style: normal;
+}
+
 #indicator-control .caret {
   margin-left: 3px;
 }

@@ -42,7 +42,7 @@ $(function() {
 
     if (data[1] = 'success') {
       var values = parseData(data[0]);
-      styleMap(values);
+      styleMap(values, year);
       createTable(countries, values);
     }
   }
@@ -96,9 +96,10 @@ $(function() {
         };
       }
     }).addTo(map);
+    createLegend(colors);
   }
 
-  function styleMap(values) {
+  function styleMap(values, year) {
     geojson.eachLayer(function (layer) {
         var feature = layer.feature;
         if (values[feature.id] && values[feature.id][year]) {
@@ -116,8 +117,6 @@ $(function() {
           layer.off('click', onMapClick);
         }
     });
-
-    createLegend(colors);
   }
 
   function parseData(data) {
@@ -266,14 +265,14 @@ $(function() {
 
       for (id in indicator.dejure) {
         var criterion = indicator.dejure[id];
-        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '✓' : '') + '</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '<span class="glyphicon glyphicon glyphicon-ok-sign"></span>' : '') + '</td></tr>';
       }
 
       html += '<tr id="1df"><td style="padding-left:20px">De facto</td><td class="text-right"></td></tr>';      
 
       for (id in indicator.defacto) {
         var criterion = indicator.defacto[id];
-        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '✓' : '') + '</td></tr>';
+        html += '<tr id="1" class="criterion"><td style="padding-left:40px">' + id + '. ' + criterion.name + '</td><td class="text-right" style="font-size:14;font-weight:bold;">' + ((Math.random() < 0.5) ? '<span class="glyphicon glyphicon glyphicon-ok-sign"></span>' : '') + '</td></tr>';
       }
     }
 
@@ -288,7 +287,7 @@ $(function() {
     html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">De jure</a></li><li><a href="#">De facto</a></li></ul></div>';
       
     // Years
-    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">' + years[0] + '<span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle dropdown-years" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
     for (var i = 0; i < years.length; i++) {   
       html += '<li><a href="#">' + years[i] + '</a></li>';
     };
@@ -296,8 +295,13 @@ $(function() {
 
     html += '</div>';    
     $('#indicator-control').append(html);
+
+    $('#indicator-control li a').click(function (evt) {
+      var year = $(this).text();
+      $('#indicator-control .dropdown-years i').text(year);
+      styleMap(values, year);
+    });
+
   }
-
-
 
 });
