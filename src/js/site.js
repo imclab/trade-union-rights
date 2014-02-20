@@ -197,7 +197,7 @@ $(function() {
   function createGraph (values) {
     var data = [];
     for (year in values) {
-      data.push([year, values[year].both]);
+      data.push([year, values[year].total]);
     }
     $.plot("#placeholder", [data], {
       series: {
