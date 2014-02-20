@@ -50,7 +50,7 @@ $(function() {
   function initMap() {
     // Sphere Mollweide: http://spatialreference.org/ref/esri/53009/
     var crs = new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
-      resolutions: [45000, 25000, 12500, 6250, 3125] 
+      resolutions: [40000, 20000, 10000, 5000, 2500] 
     });
 
     map = L.map('map', {
@@ -168,13 +168,20 @@ $(function() {
     html += '<h4>' + country.name + '</h4><p>Trade union rights - total</p>';
     html += '<div id="placeholder" class="demo-placeholder"></div><br/>';
 
-    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">Score</th><th class="text-right">Trend</th></tr></thead><tbody>';
+    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">2012</th><th class="text-right">Trend</th></tr></thead><tbody>';
 
     for (id in index.items) {
       var indicator = index.items[id];
       //console.log(indicator);
+      var style = 'default';
+      if (id == 1) style = 'warning';
+      html += '<tr class="' + style + '"><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
 
-      html += '<tr class="' + ((id == 1) ? 'warning' : '') + '"><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
+      if (id == 1) {
+        html += '<tr><td style="padding-left: 20px">In law</td><td class="text-right">xx</td><td></td></tr>'
+        html += '<tr><td style="padding-left: 20px">In practice</td><td class="text-right">xx</td><td></td></tr>'
+      }
+
     }
 
     html +='</tbody></table>';
