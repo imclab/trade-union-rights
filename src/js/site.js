@@ -50,7 +50,7 @@ $(function() {
   function initMap() {
     // Sphere Mollweide: http://spatialreference.org/ref/esri/53009/
     var crs = new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
-      resolutions: [50000, 25000, 12500, 6250, 3125] 
+      resolutions: [45000, 25000, 12500, 6250, 3125] 
     });
 
     map = L.map('map', {
@@ -168,7 +168,7 @@ $(function() {
     html += '<h4>' + country.name + '</h4><p>Trade union rights - total</p>';
     html += '<div id="placeholder" class="demo-placeholder"></div><br/>';
 
-    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">Score</th><th class="text-right">Tend</th></tr></thead><tbody>';
+    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">Score</th><th class="text-right">Trend</th></tr></thead><tbody>';
 
     for (id in index.items) {
       var indicator = index.items[id];
@@ -302,12 +302,12 @@ $(function() {
   function createLayerSwitcher () {
     var years = [2012, 2009, 2005, 2000];
 
-    var html = '<div class="btn-group btn-group-xs">';
-    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
-    html += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">In law</a></li><li><a href="#">In practice</a></li></ul></div>';
+    var html = '<div class="btn-group">';
+    html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
+    html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">In law</a></li><li><a href="#">In practice</a></li></ul></div>';
       
     // Years
-    html += '<div class="btn-group btn-group-xs dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<div class="btn-group btn-group-sm dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
     for (var i = 0; i < years.length; i++) {   
       html += '<li><a href="#">' + years[i] + '</a></li>';
     };
