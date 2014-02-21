@@ -12,6 +12,7 @@ $(function() {
     },
     type: 'total',
     countries: {},
+    sortedCountries: [],
     country: null,
     values: {},
     criteria: null,
@@ -24,12 +25,13 @@ $(function() {
   initMap();
 
   $.when(
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicators"),      
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicators"),   
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT iso_n3 AS code, name FROM turi_countries ORDER BY name"),          
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_values")  
   ).then(parseData);
 
-  function parseData(indicators, geojson, values) {
+  function parseData(indicators, countries, geojson, values) {
     if (indicators[1] = 'success') {
       indicators = indicators[0].rows;
       for (var i = 0; i < indicators.length; i++) { 
@@ -39,14 +41,18 @@ $(function() {
       }
     }
 
-    if (geojson[1] = 'success') {
-      var features = geojson[0].features;
-      for (var i = 0; i < features.length; i++) {
-        var feature = features[i]; 
-        data.countries[feature.id] = feature.properties;     
+    if (countries[1] = 'success') {
+      countries = countries[0].rows;
+      for (var i = 0; i < countries.length; i++) { 
+        var country = countries[i];
+        data.countries[country.code] = country;
+        data.sortedCountries.push(country);        
       }
+      createDropdown(data.sortedCountries);
+    }
+
+    if (geojson[1] = 'success') {
       drawCountries(geojson[0]);
-      createDropdown(data.countries);
     }
 
     if (values[1] = 'success') {
@@ -379,9 +385,9 @@ $(function() {
 
   function createDropdown (countries) {
     var html = '';
-    for (code in countries) {
-      var country = countries[code];
-      html += '<option value="' + code + '">' + country.name + '</option>'
+    for (var i = 0; i < countries.length; i++) {    
+      var country = countries[i];
+      html += '<option value="' + country.code + '">' + country.name + '</option>'
     }
     $('.countries').append(html); 
 
