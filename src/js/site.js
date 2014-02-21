@@ -5,6 +5,11 @@ $(function() {
     year: 2012,
     indicators: {},
     indicator: '1',
+    types: {
+      total: 'Total',
+      dejure: 'In law',
+      defacto: 'In practice'
+    },
     type: 'total',
     countries: {},
     country: null,
@@ -112,8 +117,8 @@ $(function() {
   function styleMap(values, year) {
     geojson.eachLayer(function (layer) {
       var feature = layer.feature;
-      if (values[feature.id] && values[feature.id][year]) {
-        var value = values[feature.id][year].total;  
+      if (values[feature.id] && values[feature.id][year] && values[feature.id][year][data.type]) {
+        var value = values[feature.id][year][data.type];  
         layer.setStyle({ fillColor: data.colors[Math.floor(value/10)] });
         layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
         layer.on('click', onMapClick); 
@@ -166,13 +171,10 @@ $(function() {
       var indicator = data.indicators[id],
           style = 'default';
 
-      getTrend(id, code, year, 'total');
-
-      if (id == data.indicator) style = 'warning';
-      html += '<tr class="' + style + '"><td>' + indicator.name + '</td><td class="text-right">' + getValue(id, code, year, 'total') + '</td><td class="text-center">' + getTrend(id, code, year, 'total') + '</span></td></tr>';
+      html += '<tr class="' + ((id == data.indicator && data.type == 'total') ? 'warning' : 'default') + '"><td>' + indicator.name + '</td><td class="text-right">' + getValue(id, code, year, 'total') + '</td><td class="text-center">' + getTrend(id, code, year, 'total') + '</span></td></tr>';
       if (id == data.indicator) {
-        html += '<tr><td style="padding-left: 20px">In law</td><td class="text-right">' + getValue(id, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(id, code, year, 'dejure') + '</td></tr>'
-        html += '<tr><td style="padding-left: 20px">In practice</td><td class="text-right">' + getValue(id, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(id, code, year, 'defacto') + '</td></tr>'
+        html += '<tr class="' + ((data.type == 'dejure') ? 'warning' : 'default') + '"><td style="padding-left: 20px">In law</td><td class="text-right">' + getValue(id, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(id, code, year, 'dejure') + '</td></tr>'
+        html += '<tr class="' + ((data.type == 'defacto') ? 'warning' : 'default') + '"><td style="padding-left: 20px">In practice</td><td class="text-right">' + getValue(id, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(id, code, year, 'defacto') + '</td></tr>'
       }
     }
 
@@ -331,11 +333,18 @@ $(function() {
   }
 
   function createLayerSwitcher () {
-    var years = [2012, 2009, 2005, 2000];
+    var years = [2012, 2009, 2005, 2000],
+        control = $('#indicator-control');
 
     var html = '<div class="btn-group">';
     html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
-    html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Total<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Total</a></li><li><a href="#">In law</a></li><li><a href="#">In practice</a></li></ul></div>';
+
+    // Type
+    html += '<div class="btn-group btn-group-sm dropdown-type"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i>Total</i><span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<li id="total"><a href="#">Total</a></li>';
+    html += '<li id="dejure"><a href="#">In law</a></li>';
+    html += '<li id="defacto"><a href="#">In practice</a>';
+    html += '</li></ul></div>';
       
     // Years
     html += '<div class="btn-group btn-group-sm dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
@@ -345,16 +354,24 @@ $(function() {
     html += '</ul></div>';
 
     html += '</div>';    
-    $('#indicator-control').append(html);
+    control.append(html);
 
-    $('#indicator-control .dropdown-years li a').click(function (evt) {
-      data.year = parseInt($(this).text());
-      $('#indicator-control .dropdown-years i').text(data.year);
+    $('.dropdown-type li', control).click(function (evt) {
+      data.type = this.id;
+      $('.dropdown-type i', control).text(data.types[data.type]);
       styleMap(data.values[data.indicator], data.year);
       if (data.country) {
         showCountry(data.country);
       }
+    });
 
+    $('.dropdown-years li a', control).click(function (evt) {
+      data.year = parseInt($(this).text());
+      $('.dropdown-years i', control).text(data.year);
+      styleMap(data.values[data.indicator], data.year);
+      if (data.country) {
+        showCountry(data.country);
+      }
     });
 
   }
