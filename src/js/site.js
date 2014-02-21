@@ -24,7 +24,7 @@ $(function() {
   initMap();
 
   $.when(
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicator"),      
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicators"),      
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_values")  
   ).then(parseData);
