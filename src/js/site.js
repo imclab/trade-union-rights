@@ -28,7 +28,7 @@ $(function() {
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicators"),   
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT iso_n3 AS code, name FROM turi_countries ORDER BY name"),          
     $.getJSON('data/countries_110m.geojson'),
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_values")  
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_indicator_values")  
   ).then(parseData);
 
   function parseData(indicators, countries, geojson, values) {
