@@ -21,7 +21,7 @@ $(function() {
   $.when(
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicator"),      
     $.getJSON('data/countries_110m.geojson'),
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT country, year, type, value FROM turi_values WHERE indicator='" + data.indicator + "'")  
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_values")  
   ).then(parseData);
 
   function parseData(indicators, geojson, values) {
@@ -30,6 +30,7 @@ $(function() {
       for (var i = 0; i < indicators.length; i++) { 
         var indicator = indicators[i];
         data.indicators[indicator.id] = indicator;
+        data.values[indicator.id] = {};
       }
     }
 
@@ -46,12 +47,13 @@ $(function() {
       values = values[0].rows;
       for (var i = 0; i < values.length; i++) { 
         var value = values[i];
-        if (!data.values[value.country]) data.values[value.country] = {}; 
-        if (!data.values[value.country][value.year]) data.values[value.country][value.year] = {}; 
-        data.values[value.country][value.year][value.type] = value.value;
+      
+        if (!data.values[value.indicator][value.country]) data.values[value.indicator][value.country] = {}; 
+        if (!data.values[value.indicator][value.country][value.year]) data.values[value.indicator][value.country][value.year] = {}; 
+        data.values[value.indicator][value.country][value.year][value.type] = value.value;
       }
-      styleMap(data.values, data.year);
-      createTable(data.countries, data.values);
+      styleMap(data.values[data.indicator], data.year);
+      createTable(data.countries, data.values[data.indicator]);
     }
   }
 
@@ -142,53 +144,81 @@ $(function() {
 
   function onMapClick(evt) {
     if (evt.target.feature) {
-      showCountry(evt.target.feature.id);
+      data.country = evt.target.feature.id;
+      showCountry(data.country);
     }
   }
 
-  function showCountry (code, indicator, type, year) {
-    var country = data.countries[code];
+  function showCountry (code) {
+    var country = data.countries[code],
+        year = data.year;
+
     $('#indicator').hide();
 
     var html = '<button style="float: right" type="button" id="profile-button" class="btn btn-warning">Country profile</button>';
+    html += '<h4>' + country.name + '</h4><p>' + data.indicators[data.indicator].name +'</p>';
+    html += '<div id="country-chart"></div><br/>';
 
-
-    html += '<h4>' + country.name + '</h4><p>Trade union rights - total</p>';
-    html += '<div id="placeholder" class="demo-placeholder"></div><br/>';
-
-    html += '<table id="ranking" class="table table-hover table-condensed"><thead><tr><th>Indicator</th><th class="text-right">2012</th><th class="text-right">Trend</th></tr></thead><tbody>';
+    html += '<table id="country-table" class="table table-hover table-condensed">';
+    html += '<thead><tr><th>Indicator</th><th class="text-right">' + year + '</th><th class="text-right">Trend</th></tr></thead><tbody>';
 
     for (id in data.indicators) {
-      var indicator = data.indicators[id];
-      //console.log(indicator);
-      var style = 'default';
-      if (id == 1) style = 'warning';
-      html += '<tr class="' + style + '"><td>' + indicator.name + '</td><td class="text-right">xx</td><td></td></tr>'
+      var indicator = data.indicators[id],
+          style = 'default';
 
-      if (id == 1) {
-        html += '<tr><td style="padding-left: 20px">In law</td><td class="text-right">xx</td><td></td></tr>'
-        html += '<tr><td style="padding-left: 20px">In practice</td><td class="text-right">xx</td><td></td></tr>'
+      getTrend(id, code, year, 'total');
+
+      if (id == data.indicator) style = 'warning';
+      html += '<tr class="' + style + '"><td>' + indicator.name + '</td><td class="text-right">' + getValue(id, code, year, 'total') + '</td><td class="text-center">' + getTrend(id, code, year, 'total') + '</span></td></tr>';
+      if (id == data.indicator) {
+        html += '<tr><td style="padding-left: 20px">In law</td><td class="text-right">' + getValue(id, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(id, code, year, 'dejure') + '</td></tr>'
+        html += '<tr><td style="padding-left: 20px">In practice</td><td class="text-right">' + getValue(id, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(id, code, year, 'defacto') + '</td></tr>'
       }
-
     }
 
     html +='</tbody></table>';
 
-
-
     $('#country').html(html).show();
-    createGraph(data.values[code]);
+    createGraph(data.values[data.indicator][code]);
     $('#profile-button').click(function (evt) {
       showProfile(code);
     });
   }
 
-  function createGraph (values) {
-    var data = [];
-    for (year in values) {
-      data.push([year, values[year].total]);
+  function getValue (indicator, country, year, type) {
+    var values = data.values[indicator];
+    if (values[country] && values[country][year] && values[country][year][type]) {
+      return values[country][year][type];
+    } else {
+      return 'No data';
     }
-    $.plot("#placeholder", [data], {
+  }
+
+  function getTrend (indicator, country, year, type) {
+    var prevYear = data.years[data.years.indexOf(year) + 1];
+    if (prevYear) {
+      var lastValue = getValue(indicator, country, year, type),
+          prevValue = getValue(indicator, country, prevYear, type)
+      if (lastValue !== 'No data' && prevValue !== 'No data') {
+        if (lastValue > prevValue) {
+          return '<span class="glyphicon glyphicon-arrow-up"></span>';
+        } else if (lastValue < prevValue) {
+           return '<span class="glyphicon glyphicon-arrow-down"></span>';         
+        }
+      }
+    }
+    return '';
+  }
+
+  function createGraph (values) {
+    var series = [],
+        points = {};
+
+    for (year in values) {
+      series.push([year, values[year].total]);
+      points[year] = series.length - 1;
+    }
+    var chart = $.plot("#country-chart", [series], {
       series: {
         lines: { show: true },
         points: { show: true }
@@ -200,6 +230,9 @@ $(function() {
         tickDecimals: 0
       }
     });    
+    if (points[data.year] !== undefined) {
+      chart.highlight(0, points[data.year]);
+    }
   }
 
   function createTable (countries, values) {
@@ -209,7 +242,7 @@ $(function() {
     for (code in values) {  
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
-      var value = data.values[code][year].total;
+      var value = values[code][year].total;
       html += '<tr id="' + code + '"><td>' + name + '</td><td></td><td></td><td class="text-right">' + value + '</td></tr>'
     }
 
@@ -315,9 +348,13 @@ $(function() {
     $('#indicator-control').append(html);
 
     $('#indicator-control .dropdown-years li a').click(function (evt) {
-      var year = $(this).text();
-      $('#indicator-control .dropdown-years i').text(year);
-      styleMap(values, year);
+      data.year = parseInt($(this).text());
+      $('#indicator-control .dropdown-years i').text(data.year);
+      styleMap(data.values[data.indicator], data.year);
+      if (data.country) {
+        showCountry(data.country);
+      }
+
     });
 
   }
