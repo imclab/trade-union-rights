@@ -46,6 +46,7 @@ $(function() {
         data.countries[feature.id] = feature.properties;     
       }
       drawCountries(geojson[0]);
+      createDropdown(data.countries);
     }
 
     if (values[1] = 'success') {
@@ -375,5 +376,19 @@ $(function() {
     });
 
   }
+
+  function createDropdown (countries) {
+    var html = '';
+    for (code in countries) {
+      var country = countries[code];
+      html += '<option value="' + code + '">' + country.name + '</option>'
+    }
+    $('.countries').append(html); 
+
+    $('.countries').chosen({width: '300px'}).change(function (evt, option) {
+      showProfile(option.selected)
+    });
+  }
+
 
 });
