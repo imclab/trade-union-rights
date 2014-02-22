@@ -25,11 +25,30 @@ $(function() {
   initMap();
 
   $.when(
-    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name FROM turi_indicators"),   
+    $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name, description FROM turi_indicators"),   
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT iso_n3 AS code, name FROM turi_countries ORDER BY name"),          
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_indicator_values")  
   ).then(parseData);
+
+  $('.navbar-nav .toggle').click(function (evt) {
+    evt.preventDefault(); 
+    menuChange(this.id);
+  });
+
+  $('#country-panel .close').click(function () {
+    data.country = null;
+    //$('#country-panel').hide();
+
+    //$('#col-right').animate({"margin-left":"-400px"}, "slow");
+    $('#country-panel').hide();
+
+    $('#indicator-panel').show();
+  });
+
+  $('#profile-button').click(function () {
+    showProfile(data.country);
+  });
 
   function parseData(indicators, countries, geojson, values) {
     if (indicators[1] = 'success') {
@@ -66,6 +85,7 @@ $(function() {
       }
       styleMap(data.values[data.indicator], data.year);
       createTable(data.countries, data.values[data.indicator]);
+      showIndicator(data.indicator);
     }
   }
 
@@ -157,26 +177,46 @@ $(function() {
   function onMapClick(evt) {
     if (evt.target.feature) {
       data.country = evt.target.feature.id;
-      showCountry(data.country);
+      showCountryPanel(data.country);
     }
   }
 
-  function showCountry (code) {
-    var country = data.countries[code],
+  // Show indicator info in right column
+  function showIndicator (id) {
+    var indicator = data.indicators[id],
+        description = indicator.description.split(/\r\n|\r|\n/g);
+
+    var html = '<div class="panel-heading"><h3 class="panel-title">' + indicator.name + '</h3></div><div class="panel-body">';
+    for (var i = 0; i < description.length; i++) {   
+      html += description[i] + '<br/>';
+    }
+    html += '</div>';
+    $('#indicator-panel').html(html).show();
+  }
+
+  function showCountryPanel (code) {
+    var countryPanel = $('#country-panel'),
+        country = data.countries[code],
         year = data.year;
 
-    $('#indicator').hide();
+    $('#indicator-panel').hide();
 
-    var html = '<button style="float: right" type="button" id="profile-button" class="btn btn-warning">Country profile</button>';
-    html += '<h4>' + country.name + '</h4><p>' + data.indicators[data.indicator].name +'</p>';
-    html += '<div id="country-chart"></div><br/>';
+    $('.panel-title', countryPanel).text(country.name);
 
+    var html = '<p><h4>' + data.indicators[data.indicator].name + ' ' + year + '</h4></p><div id="country-chart"></div>';
     html += '<table id="country-table" class="table table-hover table-condensed">';
-    html += '<thead><tr><th>Indicator</th><th class="text-right">' + year + '</th><th class="text-right">Trend</th></tr></thead><tbody>';
+    html += '<thead><tr><th></th><th class="text-right">Score</th><th class="text-center">Trend</th></tr></thead><tbody>';
 
+    var indicator = data.indicators[1];
+
+      html += '<tr class="' + ((data.type == 'total') ? 'warning' : 'default') + '"><td>Total</td><td class="text-right">' + getValue(1, code, year, 'total') + '</td><td class="text-center">' + getTrend(1, code, year, 'total') + '</span></td></tr>';
+      html += '<tr class="' + ((data.type == 'dejure') ? 'warning' : 'default') + '"><td>In law</td><td class="text-right">' + getValue(1, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(1, code, year, 'dejure') + '</td></tr>'
+      html += '<tr class="' + ((data.type == 'defacto') ? 'warning' : 'default') + '"><td>In practice</td><td class="text-right">' + getValue(1, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(1, code, year, 'defacto') + '</td></tr>'
+
+
+    /*
     for (id in data.indicators) {
-      var indicator = data.indicators[id],
-          style = 'default';
+      var indicator = data.indicators[id];
 
       html += '<tr class="' + ((id == data.indicator && data.type == 'total') ? 'warning' : 'default') + '"><td>' + indicator.name + '</td><td class="text-right">' + getValue(id, code, year, 'total') + '</td><td class="text-center">' + getTrend(id, code, year, 'total') + '</span></td></tr>';
       if (id == data.indicator) {
@@ -184,14 +224,14 @@ $(function() {
         html += '<tr class="' + ((data.type == 'defacto') ? 'warning' : 'default') + '"><td style="padding-left: 20px">In practice</td><td class="text-right">' + getValue(id, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(id, code, year, 'defacto') + '</td></tr>'
       }
     }
+    */
 
-    html +='</tbody></table>';
+    html += '</tbody></table>';
 
-    $('#country').html(html).show();
+    $('.panel-body', countryPanel).html(html);
+
+    countryPanel.show();
     createGraph(data.values[data.indicator][code]);
-    $('#profile-button').click(function (evt) {
-      showProfile(code);
-    });
   }
 
   function getValue (indicator, country, year, type) {
@@ -263,21 +303,20 @@ $(function() {
     $('#ranking thead tr th:last-child').trigger('click');
 
     $('#ranking tbody tr').click(function() {
-      if (this.id) showCountry(this.id);
+      if (this.id) showCountryPanel(this.id);
     });
 
   }
 
-  $('.navbar-nav .toggle').click(function (evt) {
-    evt.preventDefault(); 
-    menuChange(this.id);
-  });
+
 
   function menuChange (id) {
     $('.navbar-nav li').removeClass('active');
     $('#'+ id).addClass('active');
     $('.toggle-pane').hide();
-    $('#'+ id +'-pane').show();    
+    $('#'+ id +'-pane').show();
+    $('#country-panel').hide();
+    $('#indicator-panel').show();  
   }
 
   function showMap () {
@@ -344,17 +383,17 @@ $(function() {
         control = $('#indicator-control');
 
     var html = '<div class="btn-group">';
-    html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
+    //html += '<div class="btn-group btn-group-sm"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Trade union rights<span class="caret"></span></button><ul class="dropdown-menu"><li><a href="#">Trade union rights</a></li><li><a href="#">Fundamental civil liberties</a></li><li><a href="#">Freedom of association rights</a></li><li><a href="#">Collective bargaining rights</a></li><li><a href="#">Right to strike</a></li></ul></div>';
 
     // Type
-    html += '<div class="btn-group btn-group-sm dropdown-type"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i>Total</i><span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<div class="btn-group dropdown-type"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i>Total</i><span class="caret"></span></button><ul class="dropdown-menu">';
     html += '<li id="total"><a href="#">Total</a></li>';
     html += '<li id="dejure"><a href="#">In law</a></li>';
     html += '<li id="defacto"><a href="#">In practice</a>';
     html += '</li></ul></div>';
       
     // Years
-    html += '<div class="btn-group btn-group-sm dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
+    html += '<div class="btn-group dropdown-years"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-target="#"><i>' + years[0] + '</i><span class="caret"></span></button><ul class="dropdown-menu">';
     for (var i = 0; i < years.length; i++) {   
       html += '<li><a href="#">' + years[i] + '</a></li>';
     };
@@ -368,7 +407,7 @@ $(function() {
       $('.dropdown-type i', control).text(data.types[data.type]);
       styleMap(data.values[data.indicator], data.year);
       if (data.country) {
-        showCountry(data.country);
+        showCountryPanel(data.country);
       }
     });
 
@@ -377,7 +416,7 @@ $(function() {
       $('.dropdown-years i', control).text(data.year);
       styleMap(data.values[data.indicator], data.year);
       if (data.country) {
-        showCountry(data.country);
+        showCountryPanel(data.country);
       }
     });
 
@@ -395,6 +434,5 @@ $(function() {
       showProfile(option.selected)
     });
   }
-
 
 });
