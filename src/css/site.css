@@ -6,13 +6,10 @@ body {
   padding-right: 30px; 
 }
 
-.box {
-  border: 1px solid #ddd;
-}
 
-.dropdown-menu {
-  z-index: 2000;
-}
+
+
+/* Map */
 
 #map {
   width: 100%; 
@@ -21,9 +18,17 @@ body {
 }
 
 
+/* Ranking table */
+
+#ranking {
+  cursor: pointer;
+}  
+
 #ranking .progress {
   margin-bottom: 0;
-}  
+}
+
+
 
 
 
