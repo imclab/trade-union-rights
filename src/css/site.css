@@ -21,6 +21,11 @@ body {
 }
 
 
+#ranking .progress {
+  margin-bottom: 0;
+}  
+
+
 
 #col-left {
   z-index: 2;

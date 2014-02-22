@@ -84,7 +84,7 @@ $(function() {
         data.values[value.indicator][value.country][value.year][value.type] = value.value;
       }
       styleMap(data.values[data.indicator], data.year);
-      createTable(data.countries, data.values[data.indicator]);
+      createRanking(data.countries, data.values[data.indicator]);
       showIndicator(data.indicator);
     }
   }
@@ -209,10 +209,9 @@ $(function() {
 
     var indicator = data.indicators[1];
 
-      html += '<tr class="' + ((data.type == 'total') ? 'warning' : 'default') + '"><td>Total</td><td class="text-right">' + getValue(1, code, year, 'total') + '</td><td class="text-center">' + getTrend(1, code, year, 'total') + '</span></td></tr>';
-      html += '<tr class="' + ((data.type == 'dejure') ? 'warning' : 'default') + '"><td>In law</td><td class="text-right">' + getValue(1, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(1, code, year, 'dejure') + '</td></tr>'
-      html += '<tr class="' + ((data.type == 'defacto') ? 'warning' : 'default') + '"><td>In practice</td><td class="text-right">' + getValue(1, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(1, code, year, 'defacto') + '</td></tr>'
-
+    html += '<tr class="' + ((data.type == 'total') ? 'warning' : 'default') + '"><td>Total</td><td class="text-right">' + getValue(1, code, year, 'total') + '</td><td class="text-center">' + getTrend(1, code, year, 'total') + '</span></td></tr>';
+    html += '<tr class="' + ((data.type == 'dejure') ? 'warning' : 'default') + '"><td>In law</td><td class="text-right">' + getValue(1, code, year, 'dejure') + '</td><td class="text-center">' + getTrend(1, code, year, 'dejure') + '</td></tr>'
+    html += '<tr class="' + ((data.type == 'defacto') ? 'warning' : 'default') + '"><td>In practice</td><td class="text-right">' + getValue(1, code, year, 'defacto') + '</td><td class="text-center">' + getTrend(1, code, year, 'defacto') + '</td></tr>'
 
     /*
     for (id in data.indicators) {
@@ -284,7 +283,7 @@ $(function() {
     }
   }
 
-  function createTable (countries, values) {
+  function createRanking (countries, values) {
     var html = '',
         year = 2012;
 
@@ -292,7 +291,9 @@ $(function() {
       var name = 'Country';
       if (countries[code]) name = countries[code].name;
       var value = values[code][year].total;
-      html += '<tr id="' + code + '"><td>' + name + '</td><td></td><td></td><td class="text-right">' + value + '</td></tr>'
+      html += '<tr id="' + code + '"><td>' + name + '</td>';
+      html += '<td width="50%"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + value + '%;"><span class="sr-only">60% Complete</span></div></div></td>';
+      html += '<td class="text-right">' + value + '</td></tr>'
     }
 
     $('#ranking tbody').append(html);
@@ -300,15 +301,13 @@ $(function() {
     new Tablesort(document.getElementById('ranking'));
 
     // Trigger click to sort table
-    $('#ranking thead tr th:last-child').trigger('click');
+    $('#ranking thead tr th:last-child').trigger('click').trigger('click');
 
     $('#ranking tbody tr').click(function() {
       if (this.id) showCountryPanel(this.id);
     });
 
   }
-
-
 
   function menuChange (id) {
     $('.navbar-nav li').removeClass('active');
@@ -317,14 +316,6 @@ $(function() {
     $('#'+ id +'-pane').show();
     $('#country-panel').hide();
     $('#indicator-panel').show();  
-  }
-
-  function showMap () {
-
-  }
-
-  function showRanking () {
-
   }
 
   function showProfile(code) {
