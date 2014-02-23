@@ -16,13 +16,14 @@ $(function() {
     country: null,
     values: {},
     criteria: null,
-    criterion: null,
-    colors: ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)']
+    criterion: null  
   };
   
-  var map, geojson;
+  //initMap();
+  var map = L.choropleth('map');
+  var geojson;
 
-  initMap();
+  createLayerSwitcher();
 
   $.when(
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT id, name, description FROM turi_indicators"),   
@@ -30,6 +31,11 @@ $(function() {
     $.getJSON('data/countries_110m.geojson'),
     $.getJSON("http://turban.cartodb.com/api/v2/sql?q=SELECT indicator, country, year, type, value FROM turi_indicator_values")  
   ).then(parseData);
+
+  map.on('featureclick', function (feature){
+    data.country = feature.id;
+    showCountryPanel(data.country);
+  });
 
   $('.navbar-nav .toggle').click(function (evt) {
     evt.preventDefault(); 
@@ -71,7 +77,8 @@ $(function() {
     }
 
     if (geojson[1] = 'success') {
-      drawCountries(geojson[0]);
+      //drawCountries(geojson[0]);
+      map.drawFeatures(geojson[0]);
     }
 
     if (values[1] = 'success') {
@@ -83,103 +90,18 @@ $(function() {
         if (!data.values[value.indicator][value.country][value.year]) data.values[value.indicator][value.country][value.year] = {}; 
         data.values[value.indicator][value.country][value.year][value.type] = value.value;
       }
-      styleMap(data.values[data.indicator], data.year);
+      map.styleFeatures(data.values[data.indicator], data.year, data.type);
       createRanking(data.countries, data.values[data.indicator]);
       showIndicator(data.indicator);
     }
   }
 
-  function initMap() {
-    // Sphere Mollweide: http://spatialreference.org/ref/esri/53009/
-    var crs = new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
-      resolutions: [40000, 20000, 10000, 5000, 2500] 
-    });
 
-    map = L.map('map', {
-      crs: crs,
-      maxZoom: 3,
-      scrollWheelZoom: false
-    }).setView([0, 0], 0);
 
-    map.attributionControl.setPrefix('');
 
-    L.graticule({
-      sphere: true,
-      style: {
-        opacity: 0,
-        fillColor: '#ddf4fe',
-        fillOpacity: 1,
-        clickable: false
-      }      
-    }).addTo(map);
 
-    L.graticule({
-      style: {
-        color: '#fff',
-        weight: 1,
-        opacity: 0.5,
-        clickable: false
-      }        
-    }).addTo(map);
 
-    createLayerSwitcher();
-  }
 
-  function drawCountries(countries) {
-    geojson = L.geoJson(countries, {
-      style: function (feature) {
-        return {
-          color: '#fff',
-          opacity: 1,
-          weight: 1,
-          fillColor: '#ddd',
-          fillOpacity: 1,
-          clickable: true
-        };
-      }
-    }).addTo(map);
-    createLegend(data.colors);
-  }
-
-  function styleMap(values, year) {
-    geojson.eachLayer(function (layer) {
-      var feature = layer.feature;
-      if (values[feature.id] && values[feature.id][year] && values[feature.id][year][data.type]) {
-        var value = values[feature.id][year][data.type];  
-        layer.setStyle({ fillColor: data.colors[Math.floor(value/10)] });
-        layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
-        layer.on('click', onMapClick); 
-      } else {
-        layer.setStyle({ fillColor: '#ddd'} ); 
-        layer.unbindLabel(); 
-        layer.off('click', onMapClick);
-      }
-    });
-  }
-
-  function createLegend(colors) {
-    var legend = L.control({
-      position: 'bottomright'
-    });  
-    legend.onAdd = function(map){
-      var div = L.DomUtil.create('div', 'leaflet-control-legend');
-      var html = '<span>Worse</span>';
-      for (var i = 0; i < colors.length; i++) {
-        html += '<i class="leaflet-control-legend-color" style="background:' + colors[i] + '"></i>';
-      }
-      html += '<span>Better</span>';      
-      div.innerHTML = html;      
-      return div;
-    };
-    legend.addTo(map);
-  }
-
-  function onMapClick(evt) {
-    if (evt.target.feature) {
-      data.country = evt.target.feature.id;
-      showCountryPanel(data.country);
-    }
-  }
 
   // Show indicator info in right column
   function showIndicator (id) {
@@ -396,7 +318,7 @@ $(function() {
     $('.dropdown-type li', control).click(function (evt) {
       data.type = this.id;
       $('.dropdown-type i', control).text(data.types[data.type]);
-      styleMap(data.values[data.indicator], data.year);
+      map.styleFeatures(data.values[data.indicator], data.year, data.type);
       if (data.country) {
         showCountryPanel(data.country);
       }
@@ -405,7 +327,7 @@ $(function() {
     $('.dropdown-years li a', control).click(function (evt) {
       data.year = parseInt($(this).text());
       $('.dropdown-years i', control).text(data.year);
-      styleMap(data.values[data.indicator], data.year);
+      map.styleFeatures(data.values[data.indicator], data.year, data.type);
       if (data.country) {
         showCountryPanel(data.country);
       }
