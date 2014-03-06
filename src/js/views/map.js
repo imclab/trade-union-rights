@@ -110,12 +110,9 @@ app.view.Map = Backbone.View.extend({
   },
 
   onFeatureClick: function (evt) {
-    if (evt.target.feature) {
-      console.log('featureclick', evt.target.feature);  
-      //this.fire('featureclick', evt.target.feature);  
-    }
+    var id = evt.target.feature.id;
+    app.view.countryPanel = new app.view.CountryPanel(app.collection.countries.get(id));
   }   
-
 }); 
 
 app.view.map = new app.view.Map(app.collection.values);

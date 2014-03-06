@@ -3,9 +3,11 @@ var TurRouter = Backbone.Router.extend({
     'ranking': 'showRanking',
     'country/:id': 'showCountry'
   },
+
   showRanking: function() {
   	console.log('showRanking');
   },
+  
   showCountry: function(id) {
   	console.log('showCountry', id);
   }

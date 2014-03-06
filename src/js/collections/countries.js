@@ -4,6 +4,7 @@ app.collection = app.collection || {};
 var CountriesCollection = Backbone.Collection.extend({
   model: app.model.Country,
   url: 'data/countries.json',
+  
   fetch: function() {
     var self = this;
     // TODO: Error handling

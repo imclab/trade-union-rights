@@ -153,10 +153,39 @@
             <div id="country-panel" class="panel panel-default">
               <script type="text/template" id="country-panel-template">
                 <div class="panel-heading">
-                  <h3><%- name %></h3>
+                  <h3 class="panel-title"><%- name %></h3>
                   <button type="button" class="close" aria-hidden="true">&times;</button>
                 </div>
-                <div class="panel-body"></div>
+                <div class="panel-body">
+                  <h4><%- indicator %> <%- year %></h4>
+                  <div id="country-chart"></div>
+                  <table id="country-table" class="table table-hover table-condensed">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th class="text-right">Score</th>
+                        <th class="text-center">Trend</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="">
+                        <td>Total</td>
+                        <td class="text-right"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                      <tr class="">
+                        <td>In law</td>
+                        <td class="text-right"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                      <tr class="">
+                        <td>In practice</td>
+                        <td class="text-right"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <button id="profile-button" type="button" class="btn btn-warning">Country profile</button>
               </script>            
             </div>       
@@ -194,6 +223,5 @@
     <script src="js/views/countryProfile.js"></script> 
     <script src="js/views/countrySelect.js"></script>         
     <script src="js/app.js"></script>    
-    <!--<script src="js/site.js"></script>-->
   </body>
 </html>
