@@ -1,0 +1,4832 @@
+{
+    "time": 0.005,
+    "fields": {
+        "indicator": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "year": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        }
+    },
+    "total_rows": 687,
+    "rows": [
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2009",
+            "type": "defacto",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2009",
+            "type": "dejure",
+            "value": "32"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2012",
+            "type": "defacto",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2012",
+            "type": "dejure",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "100",
+            "year": "2000",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "100",
+            "year": "2005",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "100",
+            "year": "2009",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "100",
+            "year": "2012",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "104",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "104",
+            "year": "2005",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "104",
+            "year": "2009",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "104",
+            "year": "2012",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "108",
+            "year": "2000",
+            "type": "total",
+            "value": "27"
+        },
+        {
+            "indicator": "1",
+            "country": "108",
+            "year": "2005",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "108",
+            "year": "2009",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "108",
+            "year": "2012",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "112",
+            "year": "2005",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "112",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "112",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "116",
+            "year": "2000",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "116",
+            "year": "2005",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "116",
+            "year": "2009",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "116",
+            "year": "2012",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "012",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "012",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "012",
+            "year": "2009",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "012",
+            "year": "2012",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "120",
+            "year": "2000",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "120",
+            "year": "2005",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "120",
+            "year": "2009",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "120",
+            "year": "2012",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "124",
+            "year": "2000",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "124",
+            "year": "2005",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "124",
+            "year": "2009",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "124",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "132",
+            "year": "2000",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "132",
+            "year": "2012",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "140",
+            "year": "2000",
+            "type": "total",
+            "value": "29"
+        },
+        {
+            "indicator": "1",
+            "country": "140",
+            "year": "2005",
+            "type": "total",
+            "value": "31"
+        },
+        {
+            "indicator": "1",
+            "country": "140",
+            "year": "2009",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "140",
+            "year": "2012",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "144",
+            "year": "2000",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "144",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "144",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "144",
+            "year": "2012",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "148",
+            "year": "2000",
+            "type": "total",
+            "value": "29"
+        },
+        {
+            "indicator": "1",
+            "country": "148",
+            "year": "2005",
+            "type": "total",
+            "value": "32"
+        },
+        {
+            "indicator": "1",
+            "country": "148",
+            "year": "2009",
+            "type": "total",
+            "value": "33"
+        },
+        {
+            "indicator": "1",
+            "country": "148",
+            "year": "2012",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "152",
+            "year": "2000",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "152",
+            "year": "2005",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "152",
+            "year": "2009",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "152",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "156",
+            "year": "2000",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "156",
+            "year": "2005",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "156",
+            "year": "2009",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "156",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "170",
+            "year": "2000",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "170",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "170",
+            "year": "2009",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "170",
+            "year": "2012",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "174",
+            "year": "2005",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "174",
+            "year": "2009",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "174",
+            "year": "2012",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "178",
+            "year": "2000",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "178",
+            "year": "2005",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "178",
+            "year": "2009",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "178",
+            "year": "2012",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "180",
+            "year": "2000",
+            "type": "total",
+            "value": "23"
+        },
+        {
+            "indicator": "1",
+            "country": "180",
+            "year": "2005",
+            "type": "total",
+            "value": "26"
+        },
+        {
+            "indicator": "1",
+            "country": "180",
+            "year": "2009",
+            "type": "total",
+            "value": "29"
+        },
+        {
+            "indicator": "1",
+            "country": "180",
+            "year": "2012",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "188",
+            "year": "2000",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "188",
+            "year": "2005",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "188",
+            "year": "2009",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "188",
+            "year": "2012",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "191",
+            "year": "2000",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "191",
+            "year": "2005",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "191",
+            "year": "2009",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "191",
+            "year": "2012",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "192",
+            "year": "2000",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "192",
+            "year": "2005",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "192",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "192",
+            "year": "2012",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "196",
+            "year": "2000",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "196",
+            "year": "2005",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "196",
+            "year": "2009",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "196",
+            "year": "2012",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "020",
+            "year": "2012",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "203",
+            "year": "2000",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "203",
+            "year": "2005",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "203",
+            "year": "2009",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "203",
+            "year": "2012",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "204",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "204",
+            "year": "2005",
+            "type": "total",
+            "value": "41"
+        },
+        {
+            "indicator": "1",
+            "country": "204",
+            "year": "2009",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "204",
+            "year": "2012",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "205",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "205",
+            "year": "2005",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "205",
+            "year": "2009",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "205",
+            "year": "2012",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "208",
+            "year": "2000",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "208",
+            "year": "2005",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "208",
+            "year": "2009",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "208",
+            "year": "2012",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "212",
+            "year": "2000",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "212",
+            "year": "2005",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "212",
+            "year": "2009",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "212",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "214",
+            "year": "2000",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "214",
+            "year": "2005",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "214",
+            "year": "2009",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "214",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "218",
+            "year": "2000",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "218",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "218",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "218",
+            "year": "2012",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "222",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "222",
+            "year": "2005",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "222",
+            "year": "2009",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "222",
+            "year": "2012",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "226",
+            "year": "2000",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "226",
+            "year": "2005",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "226",
+            "year": "2009",
+            "type": "total",
+            "value": "55"
+        },
+        {
+            "indicator": "1",
+            "country": "226",
+            "year": "2012",
+            "type": "total",
+            "value": "55"
+        },
+        {
+            "indicator": "1",
+            "country": "231",
+            "year": "2000",
+            "type": "total",
+            "value": "28"
+        },
+        {
+            "indicator": "1",
+            "country": "231",
+            "year": "2005",
+            "type": "total",
+            "value": "32"
+        },
+        {
+            "indicator": "1",
+            "country": "231",
+            "year": "2009",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "231",
+            "year": "2012",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "232",
+            "year": "2012",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "233",
+            "year": "2000",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "233",
+            "year": "2005",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "233",
+            "year": "2009",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "233",
+            "year": "2012",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "024",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "024",
+            "year": "2005",
+            "type": "total",
+            "value": "41"
+        },
+        {
+            "indicator": "1",
+            "country": "024",
+            "year": "2009",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "024",
+            "year": "2012",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "242",
+            "year": "2000",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "242",
+            "year": "2005",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "242",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "242",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "246",
+            "year": "2000",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "246",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "246",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "246",
+            "year": "2012",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "250",
+            "year": "2000",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "250",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "250",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "250",
+            "year": "2012",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "262",
+            "year": "2005",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "262",
+            "year": "2009",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "262",
+            "year": "2012",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "266",
+            "year": "2000",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "266",
+            "year": "2005",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "266",
+            "year": "2009",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "266",
+            "year": "2012",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "268",
+            "year": "2005",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "268",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "268",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "270",
+            "year": "2000",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "270",
+            "year": "2005",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "270",
+            "year": "2009",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "270",
+            "year": "2012",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "275",
+            "year": "2012",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "276",
+            "year": "2000",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "276",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "276",
+            "year": "2009",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "276",
+            "year": "2012",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "028",
+            "year": "2012",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "288",
+            "year": "2000",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "288",
+            "year": "2005",
+            "type": "total",
+            "value": "49"
+        },
+        {
+            "indicator": "1",
+            "country": "288",
+            "year": "2009",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "288",
+            "year": "2012",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "293",
+            "year": "2009",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "293",
+            "year": "2012",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "294",
+            "year": "2000",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "294",
+            "year": "2005",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "294",
+            "year": "2009",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "294",
+            "year": "2012",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "296",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "300",
+            "year": "2000",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "300",
+            "year": "2005",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "300",
+            "year": "2009",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "300",
+            "year": "2012",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "308",
+            "year": "2012",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "031",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "032",
+            "year": "2000",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "032",
+            "year": "2005",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "032",
+            "year": "2009",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "032",
+            "year": "2012",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "320",
+            "year": "2000",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "320",
+            "year": "2005",
+            "type": "total",
+            "value": "55"
+        },
+        {
+            "indicator": "1",
+            "country": "320",
+            "year": "2009",
+            "type": "total",
+            "value": "57"
+        },
+        {
+            "indicator": "1",
+            "country": "320",
+            "year": "2012",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "324",
+            "year": "2005",
+            "type": "total",
+            "value": "33"
+        },
+        {
+            "indicator": "1",
+            "country": "324",
+            "year": "2009",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "324",
+            "year": "2012",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "328",
+            "year": "2000",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "328",
+            "year": "2005",
+            "type": "total",
+            "value": "61"
+        },
+        {
+            "indicator": "1",
+            "country": "328",
+            "year": "2009",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "328",
+            "year": "2012",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "332",
+            "year": "2000",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "332",
+            "year": "2005",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "332",
+            "year": "2009",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "332",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "340",
+            "year": "2000",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "340",
+            "year": "2005",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "340",
+            "year": "2009",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "340",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "344",
+            "year": "2000",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "344",
+            "year": "2005",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "344",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "344",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "348",
+            "year": "2000",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "348",
+            "year": "2005",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "348",
+            "year": "2009",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "348",
+            "year": "2012",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "352",
+            "year": "2000",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "352",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "352",
+            "year": "2009",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "352",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2000",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2005",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2009",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "356",
+            "year": "2012",
+            "type": "total",
+            "value": "55"
+        },
+        {
+            "indicator": "1",
+            "country": "036",
+            "year": "2000",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "036",
+            "year": "2005",
+            "type": "total",
+            "value": "93"
+        },
+        {
+            "indicator": "1",
+            "country": "036",
+            "year": "2009",
+            "type": "total",
+            "value": "93"
+        },
+        {
+            "indicator": "1",
+            "country": "036",
+            "year": "2012",
+            "type": "total",
+            "value": "94"
+        },
+        {
+            "indicator": "1",
+            "country": "360",
+            "year": "2000",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "360",
+            "year": "2005",
+            "type": "total",
+            "value": "57"
+        },
+        {
+            "indicator": "1",
+            "country": "360",
+            "year": "2009",
+            "type": "total",
+            "value": "61"
+        },
+        {
+            "indicator": "1",
+            "country": "360",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "364",
+            "year": "2000",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "364",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "364",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "364",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "368",
+            "year": "2005",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "368",
+            "year": "2009",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "368",
+            "year": "2012",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "372",
+            "year": "2000",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "372",
+            "year": "2005",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "372",
+            "year": "2009",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "372",
+            "year": "2012",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "376",
+            "year": "2000",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "376",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "376",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "376",
+            "year": "2012",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "380",
+            "year": "2000",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "380",
+            "year": "2005",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "380",
+            "year": "2009",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "380",
+            "year": "2012",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "384",
+            "year": "2000",
+            "type": "total",
+            "value": "39"
+        },
+        {
+            "indicator": "1",
+            "country": "384",
+            "year": "2005",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "384",
+            "year": "2009",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "384",
+            "year": "2012",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "388",
+            "year": "2000",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "388",
+            "year": "2005",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "388",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "388",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "392",
+            "year": "2000",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "392",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "392",
+            "year": "2009",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "392",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "398",
+            "year": "2000",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "398",
+            "year": "2005",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "398",
+            "year": "2009",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "398",
+            "year": "2012",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "004",
+            "year": "2000",
+            "type": "total",
+            "value": "24"
+        },
+        {
+            "indicator": "1",
+            "country": "004",
+            "year": "2005",
+            "type": "total",
+            "value": "32"
+        },
+        {
+            "indicator": "1",
+            "country": "004",
+            "year": "2009",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "004",
+            "year": "2012",
+            "type": "total",
+            "value": "37"
+        },
+        {
+            "indicator": "1",
+            "country": "040",
+            "year": "2000",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "040",
+            "year": "2005",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "040",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "040",
+            "year": "2012",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "400",
+            "year": "2000",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "400",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "400",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "400",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "404",
+            "year": "2000",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "404",
+            "year": "2005",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "404",
+            "year": "2009",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "404",
+            "year": "2012",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "410",
+            "year": "2000",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "410",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "410",
+            "year": "2009",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "410",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "414",
+            "year": "2000",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "414",
+            "year": "2005",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "414",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "414",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "417",
+            "year": "2000",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "417",
+            "year": "2005",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "417",
+            "year": "2009",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "417",
+            "year": "2012",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "418",
+            "year": "2000",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "418",
+            "year": "2005",
+            "type": "total",
+            "value": "49"
+        },
+        {
+            "indicator": "1",
+            "country": "418",
+            "year": "2009",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "418",
+            "year": "2012",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "422",
+            "year": "2005",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "422",
+            "year": "2009",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "422",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "426",
+            "year": "2000",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "426",
+            "year": "2005",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "426",
+            "year": "2009",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "426",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "428",
+            "year": "2000",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "428",
+            "year": "2005",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "428",
+            "year": "2009",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "428",
+            "year": "2012",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "430",
+            "year": "2000",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "430",
+            "year": "2005",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "430",
+            "year": "2009",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "430",
+            "year": "2012",
+            "type": "total",
+            "value": "39"
+        },
+        {
+            "indicator": "1",
+            "country": "434",
+            "year": "2005",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "434",
+            "year": "2009",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "434",
+            "year": "2012",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "438",
+            "year": "2012",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "044",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "440",
+            "year": "2000",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "440",
+            "year": "2005",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "440",
+            "year": "2009",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "440",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "442",
+            "year": "2000",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "442",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "442",
+            "year": "2009",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "442",
+            "year": "2012",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "450",
+            "year": "2000",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "450",
+            "year": "2005",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "450",
+            "year": "2009",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "450",
+            "year": "2012",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "454",
+            "year": "2000",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "454",
+            "year": "2005",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "454",
+            "year": "2009",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "454",
+            "year": "2012",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "458",
+            "year": "2000",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "458",
+            "year": "2005",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "458",
+            "year": "2009",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "458",
+            "year": "2012",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "462",
+            "year": "2000",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "462",
+            "year": "2005",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "462",
+            "year": "2009",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "462",
+            "year": "2012",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "466",
+            "year": "2000",
+            "type": "total",
+            "value": "27"
+        },
+        {
+            "indicator": "1",
+            "country": "466",
+            "year": "2005",
+            "type": "total",
+            "value": "31"
+        },
+        {
+            "indicator": "1",
+            "country": "466",
+            "year": "2009",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "466",
+            "year": "2012",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "470",
+            "year": "2000",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "470",
+            "year": "2005",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "470",
+            "year": "2009",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "470",
+            "year": "2012",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "478",
+            "year": "2000",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "478",
+            "year": "2005",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "478",
+            "year": "2009",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "478",
+            "year": "2012",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "048",
+            "year": "2000",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "048",
+            "year": "2005",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "048",
+            "year": "2009",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "048",
+            "year": "2012",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "480",
+            "year": "2000",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "480",
+            "year": "2005",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "480",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "480",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "484",
+            "year": "2000",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "484",
+            "year": "2005",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "484",
+            "year": "2009",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "484",
+            "year": "2012",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "496",
+            "year": "2000",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "496",
+            "year": "2005",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "496",
+            "year": "2009",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "496",
+            "year": "2012",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "499",
+            "year": "2005",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "499",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "499",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "050",
+            "year": "2000",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "050",
+            "year": "2005",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "050",
+            "year": "2009",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "050",
+            "year": "2012",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "504",
+            "year": "2000",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "504",
+            "year": "2005",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "504",
+            "year": "2009",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "504",
+            "year": "2012",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "508",
+            "year": "2000",
+            "type": "total",
+            "value": "25"
+        },
+        {
+            "indicator": "1",
+            "country": "508",
+            "year": "2005",
+            "type": "total",
+            "value": "29"
+        },
+        {
+            "indicator": "1",
+            "country": "508",
+            "year": "2009",
+            "type": "total",
+            "value": "31"
+        },
+        {
+            "indicator": "1",
+            "country": "508",
+            "year": "2012",
+            "type": "total",
+            "value": "33"
+        },
+        {
+            "indicator": "1",
+            "country": "051",
+            "year": "2000",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "051",
+            "year": "2005",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "051",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "051",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "512",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "512",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "516",
+            "year": "2000",
+            "type": "total",
+            "value": "56"
+        },
+        {
+            "indicator": "1",
+            "country": "516",
+            "year": "2005",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "516",
+            "year": "2009",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "516",
+            "year": "2012",
+            "type": "total",
+            "value": "61"
+        },
+        {
+            "indicator": "1",
+            "country": "052",
+            "year": "2000",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "052",
+            "year": "2005",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "052",
+            "year": "2009",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "052",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "524",
+            "year": "2000",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "524",
+            "year": "2005",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "524",
+            "year": "2009",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "524",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "528",
+            "year": "2000",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "528",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "528",
+            "year": "2009",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "528",
+            "year": "2012",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "548",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "554",
+            "year": "2000",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "554",
+            "year": "2005",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "554",
+            "year": "2009",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "554",
+            "year": "2012",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "558",
+            "year": "2000",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "558",
+            "year": "2005",
+            "type": "total",
+            "value": "57"
+        },
+        {
+            "indicator": "1",
+            "country": "558",
+            "year": "2009",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "558",
+            "year": "2012",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "056",
+            "year": "2000",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "056",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "056",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "056",
+            "year": "2012",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "562",
+            "year": "2000",
+            "type": "total",
+            "value": "23"
+        },
+        {
+            "indicator": "1",
+            "country": "562",
+            "year": "2005",
+            "type": "total",
+            "value": "27"
+        },
+        {
+            "indicator": "1",
+            "country": "562",
+            "year": "2009",
+            "type": "total",
+            "value": "29"
+        },
+        {
+            "indicator": "1",
+            "country": "562",
+            "year": "2012",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "566",
+            "year": "2005",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "566",
+            "year": "2009",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "566",
+            "year": "2012",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "578",
+            "year": "2000",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "578",
+            "year": "2005",
+            "type": "total",
+            "value": "95"
+        },
+        {
+            "indicator": "1",
+            "country": "578",
+            "year": "2009",
+            "type": "total",
+            "value": "95"
+        },
+        {
+            "indicator": "1",
+            "country": "578",
+            "year": "2012",
+            "type": "total",
+            "value": "96"
+        },
+        {
+            "indicator": "1",
+            "country": "585",
+            "year": "2000",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "585",
+            "year": "2005",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "585",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "585",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "586",
+            "year": "2000",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "586",
+            "year": "2005",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "586",
+            "year": "2009",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "586",
+            "year": "2012",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "591",
+            "year": "2000",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "591",
+            "year": "2005",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "591",
+            "year": "2009",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "591",
+            "year": "2012",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "598",
+            "year": "2000",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "598",
+            "year": "2005",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "598",
+            "year": "2009",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "598",
+            "year": "2012",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "600",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "600",
+            "year": "2005",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "600",
+            "year": "2009",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "600",
+            "year": "2012",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "604",
+            "year": "2000",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "604",
+            "year": "2005",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "604",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "604",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "608",
+            "year": "2000",
+            "type": "total",
+            "value": "61"
+        },
+        {
+            "indicator": "1",
+            "country": "608",
+            "year": "2005",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "608",
+            "year": "2009",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "608",
+            "year": "2012",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "616",
+            "year": "2000",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "616",
+            "year": "2005",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "616",
+            "year": "2009",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "616",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "620",
+            "year": "2000",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "620",
+            "year": "2005",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "620",
+            "year": "2009",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "620",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "624",
+            "year": "2005",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "624",
+            "year": "2009",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "624",
+            "year": "2012",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "626",
+            "year": "2000",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "626",
+            "year": "2005",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "626",
+            "year": "2009",
+            "type": "total",
+            "value": "55"
+        },
+        {
+            "indicator": "1",
+            "country": "626",
+            "year": "2012",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "634",
+            "year": "2000",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "634",
+            "year": "2005",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "634",
+            "year": "2009",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "634",
+            "year": "2012",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "064",
+            "year": "2012",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "642",
+            "year": "2000",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "642",
+            "year": "2005",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "642",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "642",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "643",
+            "year": "2000",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "643",
+            "year": "2005",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "643",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "643",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "646",
+            "year": "2000",
+            "type": "total",
+            "value": "31"
+        },
+        {
+            "indicator": "1",
+            "country": "646",
+            "year": "2005",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "646",
+            "year": "2009",
+            "type": "total",
+            "value": "42"
+        },
+        {
+            "indicator": "1",
+            "country": "646",
+            "year": "2012",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "659",
+            "year": "2009",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "659",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "662",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "662",
+            "year": "2012",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "670",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "670",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "678",
+            "year": "2005",
+            "type": "total",
+            "value": "49"
+        },
+        {
+            "indicator": "1",
+            "country": "678",
+            "year": "2009",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "678",
+            "year": "2012",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "682",
+            "year": "2000",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "682",
+            "year": "2005",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "682",
+            "year": "2009",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "682",
+            "year": "2012",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "686",
+            "year": "2000",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "686",
+            "year": "2005",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "686",
+            "year": "2009",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "686",
+            "year": "2012",
+            "type": "total",
+            "value": "47"
+        },
+        {
+            "indicator": "1",
+            "country": "688",
+            "year": "2000",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "688",
+            "year": "2005",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "688",
+            "year": "2009",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "688",
+            "year": "2012",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "690",
+            "year": "2000",
+            "type": "total",
+            "value": "77"
+        },
+        {
+            "indicator": "1",
+            "country": "690",
+            "year": "2005",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "690",
+            "year": "2009",
+            "type": "total",
+            "value": "80"
+        },
+        {
+            "indicator": "1",
+            "country": "690",
+            "year": "2012",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "694",
+            "year": "2000",
+            "type": "total",
+            "value": "24"
+        },
+        {
+            "indicator": "1",
+            "country": "694",
+            "year": "2005",
+            "type": "total",
+            "value": "32"
+        },
+        {
+            "indicator": "1",
+            "country": "694",
+            "year": "2009",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "694",
+            "year": "2012",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "070",
+            "year": "2005",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "070",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "070",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "702",
+            "year": "2000",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "702",
+            "year": "2005",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "702",
+            "year": "2009",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "702",
+            "year": "2012",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "703",
+            "year": "2000",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "703",
+            "year": "2005",
+            "type": "total",
+            "value": "81"
+        },
+        {
+            "indicator": "1",
+            "country": "703",
+            "year": "2009",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "703",
+            "year": "2012",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "704",
+            "year": "2000",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "704",
+            "year": "2005",
+            "type": "total",
+            "value": "57"
+        },
+        {
+            "indicator": "1",
+            "country": "704",
+            "year": "2009",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "704",
+            "year": "2012",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "705",
+            "year": "2000",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "705",
+            "year": "2005",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "705",
+            "year": "2009",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "705",
+            "year": "2012",
+            "type": "total",
+            "value": "89"
+        },
+        {
+            "indicator": "1",
+            "country": "710",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "710",
+            "year": "2005",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "710",
+            "year": "2009",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "710",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "716",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "716",
+            "year": "2005",
+            "type": "total",
+            "value": "35"
+        },
+        {
+            "indicator": "1",
+            "country": "716",
+            "year": "2009",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "716",
+            "year": "2012",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "072",
+            "year": "2000",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "072",
+            "year": "2005",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "072",
+            "year": "2009",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "072",
+            "year": "2012",
+            "type": "total",
+            "value": "63"
+        },
+        {
+            "indicator": "1",
+            "country": "724",
+            "year": "2000",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "724",
+            "year": "2005",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "724",
+            "year": "2009",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "724",
+            "year": "2012",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "736",
+            "year": "2000",
+            "type": "total",
+            "value": "36"
+        },
+        {
+            "indicator": "1",
+            "country": "736",
+            "year": "2005",
+            "type": "total",
+            "value": "39"
+        },
+        {
+            "indicator": "1",
+            "country": "736",
+            "year": "2009",
+            "type": "total",
+            "value": "41"
+        },
+        {
+            "indicator": "1",
+            "country": "736",
+            "year": "2012",
+            "type": "total",
+            "value": "41"
+        },
+        {
+            "indicator": "1",
+            "country": "740",
+            "year": "2005",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "740",
+            "year": "2009",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "740",
+            "year": "2012",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "748",
+            "year": "2000",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "748",
+            "year": "2005",
+            "type": "total",
+            "value": "50"
+        },
+        {
+            "indicator": "1",
+            "country": "748",
+            "year": "2009",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "748",
+            "year": "2012",
+            "type": "total",
+            "value": "54"
+        },
+        {
+            "indicator": "1",
+            "country": "752",
+            "year": "2000",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "752",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "752",
+            "year": "2009",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "752",
+            "year": "2012",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "756",
+            "year": "2000",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "756",
+            "year": "2005",
+            "type": "total",
+            "value": "90"
+        },
+        {
+            "indicator": "1",
+            "country": "756",
+            "year": "2009",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "756",
+            "year": "2012",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "076",
+            "year": "2000",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "076",
+            "year": "2005",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "076",
+            "year": "2009",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "076",
+            "year": "2012",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "760",
+            "year": "2000",
+            "type": "total",
+            "value": "60"
+        },
+        {
+            "indicator": "1",
+            "country": "760",
+            "year": "2005",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "760",
+            "year": "2009",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "760",
+            "year": "2012",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "762",
+            "year": "2000",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "762",
+            "year": "2005",
+            "type": "total",
+            "value": "58"
+        },
+        {
+            "indicator": "1",
+            "country": "762",
+            "year": "2009",
+            "type": "total",
+            "value": "61"
+        },
+        {
+            "indicator": "1",
+            "country": "762",
+            "year": "2012",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "764",
+            "year": "2000",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "764",
+            "year": "2005",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "764",
+            "year": "2009",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "764",
+            "year": "2012",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "768",
+            "year": "2000",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "768",
+            "year": "2005",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "768",
+            "year": "2009",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "768",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "776",
+            "year": "2000",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "776",
+            "year": "2005",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "776",
+            "year": "2009",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "776",
+            "year": "2012",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "780",
+            "year": "2000",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "780",
+            "year": "2005",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "780",
+            "year": "2009",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "780",
+            "year": "2012",
+            "type": "total",
+            "value": "76"
+        },
+        {
+            "indicator": "1",
+            "country": "784",
+            "year": "2005",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "784",
+            "year": "2009",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "784",
+            "year": "2012",
+            "type": "total",
+            "value": "82"
+        },
+        {
+            "indicator": "1",
+            "country": "788",
+            "year": "2000",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "788",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "788",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "788",
+            "year": "2012",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "792",
+            "year": "2000",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "792",
+            "year": "2005",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "792",
+            "year": "2009",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "792",
+            "year": "2012",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "795",
+            "year": "2009",
+            "type": "total",
+            "value": "68"
+        },
+        {
+            "indicator": "1",
+            "country": "795",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "008",
+            "year": "2000",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "008",
+            "year": "2005",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "008",
+            "year": "2009",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "008",
+            "year": "2012",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "800",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "800",
+            "year": "2005",
+            "type": "total",
+            "value": "41"
+        },
+        {
+            "indicator": "1",
+            "country": "800",
+            "year": "2009",
+            "type": "total",
+            "value": "44"
+        },
+        {
+            "indicator": "1",
+            "country": "800",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "804",
+            "year": "2000",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "804",
+            "year": "2005",
+            "type": "total",
+            "value": "72"
+        },
+        {
+            "indicator": "1",
+            "country": "804",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "804",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "807",
+            "year": "2005",
+            "type": "total",
+            "value": "71"
+        },
+        {
+            "indicator": "1",
+            "country": "807",
+            "year": "2009",
+            "type": "total",
+            "value": "73"
+        },
+        {
+            "indicator": "1",
+            "country": "807",
+            "year": "2012",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "818",
+            "year": "2000",
+            "type": "total",
+            "value": "59"
+        },
+        {
+            "indicator": "1",
+            "country": "818",
+            "year": "2005",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "818",
+            "year": "2009",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "818",
+            "year": "2012",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "826",
+            "year": "2000",
+            "type": "total",
+            "value": "84"
+        },
+        {
+            "indicator": "1",
+            "country": "826",
+            "year": "2005",
+            "type": "total",
+            "value": "86"
+        },
+        {
+            "indicator": "1",
+            "country": "826",
+            "year": "2009",
+            "type": "total",
+            "value": "87"
+        },
+        {
+            "indicator": "1",
+            "country": "826",
+            "year": "2012",
+            "type": "total",
+            "value": "88"
+        },
+        {
+            "indicator": "1",
+            "country": "834",
+            "year": "2000",
+            "type": "total",
+            "value": "37"
+        },
+        {
+            "indicator": "1",
+            "country": "834",
+            "year": "2005",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "834",
+            "year": "2009",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "834",
+            "year": "2012",
+            "type": "total",
+            "value": "48"
+        },
+        {
+            "indicator": "1",
+            "country": "084",
+            "year": "2000",
+            "type": "total",
+            "value": "67"
+        },
+        {
+            "indicator": "1",
+            "country": "084",
+            "year": "2005",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "084",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "084",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "840",
+            "year": "2000",
+            "type": "total",
+            "value": "91"
+        },
+        {
+            "indicator": "1",
+            "country": "840",
+            "year": "2005",
+            "type": "total",
+            "value": "92"
+        },
+        {
+            "indicator": "1",
+            "country": "840",
+            "year": "2009",
+            "type": "total",
+            "value": "93"
+        },
+        {
+            "indicator": "1",
+            "country": "840",
+            "year": "2012",
+            "type": "total",
+            "value": "94"
+        },
+        {
+            "indicator": "1",
+            "country": "854",
+            "year": "2005",
+            "type": "total",
+            "value": "30"
+        },
+        {
+            "indicator": "1",
+            "country": "854",
+            "year": "2009",
+            "type": "total",
+            "value": "33"
+        },
+        {
+            "indicator": "1",
+            "country": "854",
+            "year": "2012",
+            "type": "total",
+            "value": "34"
+        },
+        {
+            "indicator": "1",
+            "country": "858",
+            "year": "2000",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "858",
+            "year": "2005",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "858",
+            "year": "2009",
+            "type": "total",
+            "value": "78"
+        },
+        {
+            "indicator": "1",
+            "country": "858",
+            "year": "2012",
+            "type": "total",
+            "value": "79"
+        },
+        {
+            "indicator": "1",
+            "country": "860",
+            "year": "2005",
+            "type": "total",
+            "value": "62"
+        },
+        {
+            "indicator": "1",
+            "country": "860",
+            "year": "2009",
+            "type": "total",
+            "value": "64"
+        },
+        {
+            "indicator": "1",
+            "country": "860",
+            "year": "2012",
+            "type": "total",
+            "value": "65"
+        },
+        {
+            "indicator": "1",
+            "country": "862",
+            "year": "2000",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "862",
+            "year": "2005",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "862",
+            "year": "2009",
+            "type": "total",
+            "value": "74"
+        },
+        {
+            "indicator": "1",
+            "country": "862",
+            "year": "2012",
+            "type": "total",
+            "value": "75"
+        },
+        {
+            "indicator": "1",
+            "country": "882",
+            "year": "2000",
+            "type": "total",
+            "value": "66"
+        },
+        {
+            "indicator": "1",
+            "country": "882",
+            "year": "2005",
+            "type": "total",
+            "value": "69"
+        },
+        {
+            "indicator": "1",
+            "country": "882",
+            "year": "2009",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "882",
+            "year": "2012",
+            "type": "total",
+            "value": "70"
+        },
+        {
+            "indicator": "1",
+            "country": "887",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "887",
+            "year": "2005",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "887",
+            "year": "2009",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "887",
+            "year": "2012",
+            "type": "total",
+            "value": "46"
+        },
+        {
+            "indicator": "1",
+            "country": "894",
+            "year": "2000",
+            "type": "total",
+            "value": "38"
+        },
+        {
+            "indicator": "1",
+            "country": "894",
+            "year": "2005",
+            "type": "total",
+            "value": "40"
+        },
+        {
+            "indicator": "1",
+            "country": "894",
+            "year": "2009",
+            "type": "total",
+            "value": "43"
+        },
+        {
+            "indicator": "1",
+            "country": "894",
+            "year": "2012",
+            "type": "total",
+            "value": "45"
+        },
+        {
+            "indicator": "1",
+            "country": "090",
+            "year": "2000",
+            "type": "total",
+            "value": "49"
+        },
+        {
+            "indicator": "1",
+            "country": "090",
+            "year": "2005",
+            "type": "total",
+            "value": "51"
+        },
+        {
+            "indicator": "1",
+            "country": "090",
+            "year": "2009",
+            "type": "total",
+            "value": "52"
+        },
+        {
+            "indicator": "1",
+            "country": "090",
+            "year": "2012",
+            "type": "total",
+            "value": "53"
+        },
+        {
+            "indicator": "1",
+            "country": "096",
+            "year": "2000",
+            "type": "total",
+            "value": "83"
+        },
+        {
+            "indicator": "1",
+            "country": "096",
+            "year": "2005",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "096",
+            "year": "2009",
+            "type": "total",
+            "value": "85"
+        },
+        {
+            "indicator": "1",
+            "country": "096",
+            "year": "2012",
+            "type": "total",
+            "value": "86"
+        }
+    ]
+}

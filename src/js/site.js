@@ -97,12 +97,6 @@ $(function() {
   }
 
 
-
-
-
-
-
-
   // Show indicator info in right column
   function showIndicator (id) {
     var indicator = data.indicators[id],

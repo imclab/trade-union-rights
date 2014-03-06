@@ -1,23 +1,35 @@
-L.Choropleth = L.Map.extend({
+var app = app || {};
+app.view = app.view || {};
 
-  options: {
-    crs: new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
-      resolutions: [40000, 20000, 10000, 5000, 2500] 
-    }),
-    maxZoom: 3,
-    scrollWheelZoom: false,
-    colors: ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)']    
+app.view.Map = Backbone.View.extend({
+  el: '#map-panel',
+  colors: ['rgb(165,0,38)','rgb(215,48,39)','rgb(244,109,67)','rgb(253,174,97)','rgb(254,224,139)','rgb(217,239,139)','rgb(166,217,106)','rgb(102,189,99)','rgb(26,152,80)','rgb(0,104,55)'],
+
+  initialize: function(values) {
+    this.collection = values;
+    this.render();
   },
 
-  initialize: function (id, options) {
-    L.Map.prototype.initialize.call(this, id, options);
-    this.attributionControl.setPrefix('');
-    this.createGraticule();
-    this.createLegend();
-    this.setView([0, 0], 0);
-  },   
+  render: function() {
+    var map = this.map = L.map('map', {
+      crs: new L.Proj.CRS('ESRI:53009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +a=6371000 +b=6371000 +units=m +no_defs', {
+        resolutions: [40000, 20000, 10000, 5000, 2500] 
+      }),
+      maxZoom: 3,
+      scrollWheelZoom: false
+    });
 
-  createGraticule: function () {
+    map.attributionControl.setPrefix('');
+    map.setView([0, 0], 0);
+
+    this.createGraticule();
+    this.loadFeatures();
+    this.createLegend();    
+
+    return this;
+  },
+
+  createGraticule: function() {
     L.graticule({
       sphere: true,
       style: {
@@ -26,7 +38,7 @@ L.Choropleth = L.Map.extend({
         fillOpacity: 1,
         clickable: false
       }      
-    }).addTo(this);
+    }).addTo(this.map);
 
     L.graticule({
       style: {
@@ -35,7 +47,15 @@ L.Choropleth = L.Map.extend({
         opacity: 0.5,
         clickable: false
       }        
-    }).addTo(this);
+    }).addTo(this.map);    
+  },
+
+  loadFeatures: function () {
+    var self = this;
+    $.getJSON('data/countries_110m.geojson', function(geojson) {
+      self.drawFeatures(geojson);
+      app.fetched();
+    });
   },
 
   drawFeatures: function (geojson) {
@@ -50,15 +70,17 @@ L.Choropleth = L.Map.extend({
           clickable: true
         };
       }
-    }).addTo(this);
+    }).addTo(this.map);
   },
 
-  styleFeatures: function (values, year, type) {
+  styleFeatures: function (year, type) {
+    var values = this.collection.extract(year, type); 
+
     this.features.eachLayer(function (layer) {
       var feature = layer.feature;
-      if (values[feature.id] && values[feature.id][year] && values[feature.id][year][type]) {
-        var value = values[feature.id][year][type];  
-        layer.setStyle({ fillColor: this.options.colors[Math.floor(value/10)] });
+      if (values[feature.id]) {
+        var value = values[feature.id].value;  
+        layer.setStyle({ fillColor: this.colors[Math.floor(value/10)] });
         layer.bindLabel(feature.properties.name + ': ' + value, {direction: 'auto'}); 
         layer.on('click', this.onFeatureClick, this); 
       } else {
@@ -70,7 +92,7 @@ L.Choropleth = L.Map.extend({
   },
 
   createLegend: function (colors) {
-  	colors = colors || this.options.colors;
+    colors = colors || this.colors;
     this.legend = L.control({
       position: 'bottomright'
     });  
@@ -84,17 +106,16 @@ L.Choropleth = L.Map.extend({
       div.innerHTML = html;      
       return div;
     };
-    this.legend.addTo(this);
+    this.legend.addTo(this.map);
   },
 
   onFeatureClick: function (evt) {
     if (evt.target.feature) {
-      this.fire('featureclick', evt.target.feature);	
+      console.log('featureclick', evt.target.feature);  
+      //this.fire('featureclick', evt.target.feature);  
     }
-  }  
+  }   
 
-});
+}); 
 
-L.choropleth = function (id, options) {
-  return new L.Choropleth(id, options);
-}; 	
+app.view.map = new app.view.Map(app.collection.values);
